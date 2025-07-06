@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+/// Convert px to rem based on base font size
+/// @param {Number} $px - pixel value
+/// @param {Number} $base - base font size (default: 16)
+@function rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem;
+}

@@ -1,0 +1,111 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../abstracts/functions' as *;
+
+/*------------------------------------*\
+  # Base Typography
+\*------------------------------------*/
+
+body {
+    font-family: variables.$font-circular;
+    font-weight: variables.$font-weight-sm;
+    line-height: variables.$line-height-120;
+    margin: 0;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: variables.$font-circular;
+    font-weight: variables.$font-weight-lg;
+}
+
+h1 {
+    font-size: rem(40);
+
+    @include mixins.media(md) {
+        font-size: rem(56);
+    }
+
+    @include mixins.media(lg) {
+        font-size: rem(69);
+    }
+}
+
+h2 {
+    font-size: rem(16);
+
+    @include mixins.media(md) {
+        font-size: rem(23);
+    }
+
+    @include mixins.media(lg) {
+        font-size: rem(23);
+    }
+}
+
+h3 {
+    font-size: rem(32);
+
+    @include mixins.media(md) {
+        font-size: rem(40);
+    }
+
+    @include mixins.media(lg) {
+        font-size: rem(44);
+    }
+}
+
+p {
+    font-family: variables.$font-inter;
+    font-weight: variables.$font-weight-sm;
+    line-height: variables.$line-height-160;
+    margin: 0;
+}
+
+/*------------------------------------*\
+# Card Typography
+\*------------------------------------*/
+
+.card-title {
+    font-size: rem(24);
+    font-weight: variables.$font-weight-lg;
+    line-height: variables.$line-height-120;
+    color: variables.$color-black;
+
+    @include mixins.media(md) {
+        font-size: rem(28);
+    }
+
+    @include mixins.media(lg) {
+        font-size: rem(28);
+    }
+}
+
+.card-description {
+    font-size: rem(18);
+    font-weight: variables.$font-weight-sm;
+    line-height: variables.$line-height-160;
+    color: variables.$color-grey;
+
+    @include mixins.media(md) {
+        font-size: rem(18);
+    }
+
+    @include mixins.media(lg) {
+        font-size: rem(18);
+    }
+}
+
+/* Links */
+a {
+    color: variables.$color-primary;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}

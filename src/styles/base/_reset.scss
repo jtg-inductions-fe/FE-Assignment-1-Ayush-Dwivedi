@@ -1,0 +1,48 @@
+@use '../abstracts/variables';
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: variables.$font-circular;
+}
+
+h1 {
+    margin: 0;
+}
+
+img,
+picture,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button {
+    font: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

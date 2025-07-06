@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'icomoon';
-    src: url('fonts/icomoon.eot?6zwm2k');
+    src: url('fonts/icomoon.eot?3pqc32');
     src:
-        url('fonts/icomoon.eot?6zwm2k#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?6zwm2k') format('truetype'),
-        url('fonts/icomoon.woff?6zwm2k') format('woff'),
-        url('fonts/icomoon.svg?6zwm2k#icomoon') format('svg');
+        url('fonts/icomoon.eot?3pqc32#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?3pqc32') format('truetype'),
+        url('fonts/icomoon.woff?3pqc32') format('woff'),
+        url('fonts/icomoon.svg?3pqc32#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -27,65 +27,55 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-circle:before {
+.icon-vector:before {
     content: '\e900';
-}
-.icon-Vector:before {
-    content: '\e901';
     color: #5d50c6;
 }
-.icon-twitter .path1:before {
-    content: '\e902';
-    color: rgb(93, 80, 198);
-}
-.icon-twitter .path2:before {
-    content: '\e903';
-    margin-left: -1em;
-    color: rgb(241, 242, 242);
+.icon-twitter:before {
+    content: '\e901';
+    color: #f1f2f2;
 }
 .icon-star:before {
-    content: '\e904';
+    content: '\e902';
     color: #facd49;
 }
 .icon-nav:before {
-    content: '\e905';
+    content: '\e903';
     color: #5d50c6;
 }
 .icon-location .path1:before {
-    content: '\e906';
+    content: '\e904';
     color: rgb(255, 87, 34);
 }
 .icon-location .path2:before {
-    content: '\e907';
+    content: '\e905';
     margin-left: -1em;
     color: rgb(255, 255, 255);
 }
-.icon-instagram .path1:before {
-    content: '\e908';
-    color: rgb(93, 80, 198);
-}
-.icon-instagram .path2:before {
-    content: '\e909';
-    margin-left: -1em;
-    color: rgb(255, 255, 255);
+.icon-instagram:before {
+    content: '\e906';
+    color: #fff;
 }
 .icon-facebook:before {
-    content: '\e90a';
+    content: '\e907';
     color: #5d50c6;
 }
 .icon-email:before {
-    content: '\e90b';
+    content: '\e908';
 }
-.icon-calender .path1:before {
-    content: '\e90c';
+.icon-calendar .path1:before {
+    content: '\e909';
     color: rgb(250, 205, 73);
 }
-.icon-calender .path2:before {
-    content: '\e90d';
+.icon-calendar .path2:before {
+    content: '\e90a';
     margin-left: -1em;
     color: rgb(255, 255, 255);
 }
 .icon-bag:before {
-    content: '\e90e';
+    content: '\e90b';
     color: #f85e9f;
+}
+.icon-arrow-circle:before {
+    content: '\e90c';
 }

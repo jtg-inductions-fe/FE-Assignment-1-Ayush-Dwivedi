@@ -1,12 +1,30 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Travel App</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <div>Hello World</div>
+        <header class="navbar">
+            <button class="navbar__login">Login</button>
+
+            <div class="navbar__logo">
+                <img src="/assets/images/logo.png" alt="Logo" />
+            </div>
+
+            <button class="navbar__toggle" aria-label="Toggle Menu">
+                <span class="icon-nav"></span>
+            </button>
+
+            <nav class="navbar__menu">
+                <ul class="navbar__list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </nav>
+        </header>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
