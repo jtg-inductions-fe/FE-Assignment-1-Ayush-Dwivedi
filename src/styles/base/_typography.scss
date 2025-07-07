@@ -1,111 +1,148 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixins';
-@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
-/*------------------------------------*\
-  # Base Typography
-\*------------------------------------*/
-
-body {
-    font-family: variables.$font-circular;
-    font-weight: variables.$font-weight-sm;
-    line-height: variables.$line-height-120;
-    margin: 0;
+html {
+    font-size: 62.5%;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: variables.$font-circular;
-    font-weight: variables.$font-weight-lg;
-}
+// Headings
+.heading {
+    font-family: $font-circular;
+    font-weight: $font-bold;
+    line-height: 1.2;
 
-h1 {
-    font-size: rem(40);
+    &--h1 {
+        font-size: 4rem;
 
-    @include mixins.media(md) {
-        font-size: rem(56);
+        @include media(md) {
+            font-size: 5.6rem;
+        }
+
+        @include media(lg) {
+            font-size: 6.9rem;
+        }
     }
 
-    @include mixins.media(lg) {
-        font-size: rem(69);
-    }
-}
+    &--h2 {
+        font-size: 1.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
 
-h2 {
-    font-size: rem(16);
+        @include media(md) {
+            font-size: 2.3rem;
+        }
 
-    @include mixins.media(md) {
-        font-size: rem(23);
-    }
-
-    @include mixins.media(lg) {
-        font-size: rem(23);
-    }
-}
-
-h3 {
-    font-size: rem(32);
-
-    @include mixins.media(md) {
-        font-size: rem(40);
+        @include media(lg) {
+            font-size: 2.3rem;
+        }
     }
 
-    @include mixins.media(lg) {
-        font-size: rem(44);
-    }
-}
-
-p {
-    font-family: variables.$font-inter;
-    font-weight: variables.$font-weight-sm;
-    line-height: variables.$line-height-160;
-    margin: 0;
-}
-
-/*------------------------------------*\
-# Card Typography
-\*------------------------------------*/
-
-.card-title {
-    font-size: rem(24);
-    font-weight: variables.$font-weight-lg;
-    line-height: variables.$line-height-120;
-    color: variables.$color-black;
-
-    @include mixins.media(md) {
-        font-size: rem(28);
+    &--h2v2 {
+        font-size: 2.4rem;
+        line-height: 4rem;
     }
 
-    @include mixins.media(lg) {
-        font-size: rem(28);
-    }
-}
+    &--h3 {
+        font-size: 3.2rem;
 
-.card-description {
-    font-size: rem(18);
-    font-weight: variables.$font-weight-sm;
-    line-height: variables.$line-height-160;
-    color: variables.$color-grey;
+        @include media(md) {
+            font-size: 4rem;
+        }
 
-    @include mixins.media(md) {
-        font-size: rem(18);
+        @include media(lg) {
+            font-size: 4.4rem;
+        }
     }
 
-    @include mixins.media(lg) {
-        font-size: rem(18);
+    &--h3v2 {
+        font-size: 3.2rem;
+
+        @include media(md) {
+            font-size: 4rem;
+        }
+
+        @include media(lg) {
+            font-size: 5.5rem;
+        }
+    }
+
+    &--h4 {
+        font-size: 2.4rem;
+
+        @include media(md) {
+            font-size: 2.8rem;
+        }
+
+        @include media(lg) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &--h4v2 {
+        font-size: 2.3rem;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+
+        @include media(lg) {
+            font-size: 2.3rem;
+        }
     }
 }
 
-/* Links */
-a {
-    color: variables.$color-primary;
-    text-decoration: none;
-    &:hover {
-        text-decoration: underline;
+.text {
+    &--anchor {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    &--anchor-v2 {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        font-size: 1.6rem;
+        line-height: 1.2;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+
+        @include media(lg) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &--anchor-v3 {
+        font-family: $font-inter;
+        font-weight: $font-regular;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+
+    &--primary {
+        font-family: $font-inter;
+        font-weight: $font-regular;
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
+
+    &--primary-v2 {
+        font-family: $font-circular;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.6;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &--stats {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        font-size: 3.5rem;
+        line-height: 1.2;
     }
 }

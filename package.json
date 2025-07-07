@@ -1,6 +1,6 @@
 {
-    "name": "static-html-base-template",
-    "description": "",
+    "name": "activity-1",
+    "description": "A modern front-end project using Vite, SCSS, and JavaScript",
     "keywords": [],
     "version": "0.0.0",
     "private": true,

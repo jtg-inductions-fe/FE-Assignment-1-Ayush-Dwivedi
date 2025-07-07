@@ -23,3 +23,21 @@ $breakpoints: (
         }
     }
 }
+
+/// Font Face Mixin
+/// @param {String} $family - Font family name
+/// @param {String} $filename - File name without extension
+/// @param {Number} $weight - Font weight
+/// @param {String} $style - Font style (default: normal)
+
+@mixin font-face($family, $filename, $weight, $style: normal) {
+    @font-face {
+        font-family: $family;
+        src:
+            url('/assets/fonts/#{$filename}.woff2') format('woff2'),
+            url('/assets/fonts/#{$filename}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}

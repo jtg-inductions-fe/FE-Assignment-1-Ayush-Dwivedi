@@ -1,53 +1,9 @@
-/* Circular Std */
-@font-face {
-    font-family: 'Circular Std';
-    src:
-        url('/assets/fonts/CircularStd-Black.woff2') format('woff2'),
-        url('/assets/fonts/CircularStd-Black.woff') format('woff'),
-        url('/assets/fonts/CircularStd-Black.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+@use '../abstracts/mixins' as *;
 
-@font-face {
-    font-family: 'Circular Std';
-    src:
-        url('/assets/fonts/CircularStd-Bold.woff2') format('woff2'),
-        url('/assets/fonts/CircularStd-Bold.woff') format('woff'),
-        url('/assets/fonts/CircularStd-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+/* Circular Std */
+@include font-face('Circular Std', 'CircularStd-Regular', 400);
+@include font-face('Circular Std', 'CircularStd-Bold', 700);
 
 /* Inter */
-@font-face {
-    font-family: 'Inter';
-    src:
-        url('/assets/fonts/Inter-Black.woff2') format('woff2'),
-        url('/assets/fonts/Inter-Black.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src:
-        url('/assets/fonts/Inter-Bold.woff2') format('woff2'),
-        url('/assets/fonts/Inter-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'IcoMoon';
-    src:
-        url('/assets/fonts/icomoon.woff') format('woff'),
-        url('/assets/fonts/icomoon.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+@include font-face('Inter', 'Inter-Regular', 400);
+@include font-face('Inter', 'Inter-Bold', 700);
