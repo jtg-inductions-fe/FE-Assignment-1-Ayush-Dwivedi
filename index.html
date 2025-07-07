@@ -7,23 +7,30 @@
     </head>
     <body>
         <header class="navbar">
-            <button class="navbar__login">Login</button>
+            <div class="container">
+                <div class="gradient-overlay" aria-hidden="true"></div>
+                <button class="navbar__login">Login</button>
 
-            <div class="navbar__logo">
-                <img src="/assets/images/logo.png" alt="Logo" />
+                <div class="navbar__logo">
+                    <img src="/assets/images/logo.png" alt="Logo" />
+                </div>
+
+                <button
+                    class="navbar__toggle"
+                    aria-label="Toggle navigation menu"
+                >
+                    <span class="icon-nav" aria-hidden="true"></span>
+                </button>
+
+                <nav class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Discover</a></li>
+                        <li><a href="#">Special Deals</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </nav>
             </div>
-
-            <button class="navbar__toggle" aria-label="Toggle Menu">
-                <span class="icon-nav"></span>
-            </button>
-
-            <nav class="navbar__menu">
-                <ul class="navbar__list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                </ul>
-            </nav>
         </header>
         <script type="module" src="./src/script/index.js"></script>
     </body>
