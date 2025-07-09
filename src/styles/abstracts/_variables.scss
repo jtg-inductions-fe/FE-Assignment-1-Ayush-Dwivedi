@@ -20,3 +20,9 @@ $font-default: $font-circular;
 // Font Weights
 $font-regular: 400;
 $font-bold: 700;
+
+// Containerization
+$container-max-width: 1192.65px;
+$container-padding-sm: 1.6rem; // Mobile
+$container-padding-md: 6.4rem; // Tablet
+$container-padding-lg: 13rem; // Desktop

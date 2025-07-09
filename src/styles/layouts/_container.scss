@@ -1,9 +1,5 @@
-@use 'mixins' as *;
-
-$container-max-width: 1200px;
-$container-padding-sm: 1.6rem; // Mobile
-$container-padding-md: 6.4rem; // Tablet
-$container-padding-lg: 13rem; // Desktop
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
 .container {
     width: 100%;
