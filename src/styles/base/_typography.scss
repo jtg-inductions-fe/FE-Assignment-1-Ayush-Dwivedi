@@ -114,15 +114,8 @@
     }
 
     &--primary--v2 {
-        font-family: $font-inter;
-        font-size: 1.8rem;
-        line-height: 1.6;
-    }
-
-    &--primary--v3 {
         font-family: $font-circular;
-        font-weight: 400;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         line-height: 1.6;
 
         @include media(md) {
@@ -130,10 +123,15 @@
         }
     }
 
+    &--primary--v3 {
+        font-family: $font-inter;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+
     &--primary--v4 {
         font-family: $font-circular;
-        font-weight: 400;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         line-height: 1.6;
 
         @include media(md) {
