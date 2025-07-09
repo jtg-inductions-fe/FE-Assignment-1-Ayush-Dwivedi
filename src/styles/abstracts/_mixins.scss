@@ -1,0 +1,43 @@
+/// Flexbox helper mixin
+/// @param {String} $justify - Justify content (default: center)
+/// @param {String} $align - Align items (default: center)
+/// @param {String} $direction - Flex direction (default: row)
+@mixin flex($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+// Media query shortcut
+$breakpoints: (
+    'sm': 430px,
+    'md': 1024px,
+    'lg': 1440px,
+);
+
+@mixin media($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+/// Font Face Mixin
+/// @param {String} $family - Font family name
+/// @param {String} $filename - File name without extension
+/// @param {Number} $weight - Font weight
+/// @param {String} $style - Font style (default: normal)
+
+@mixin font-face($family, $filename, $weight, $style: normal) {
+    @font-face {
+        font-family: $family;
+        src:
+            url('/assets/fonts/#{$filename}.woff2') format('woff2'),
+            url('/assets/fonts/#{$filename}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}

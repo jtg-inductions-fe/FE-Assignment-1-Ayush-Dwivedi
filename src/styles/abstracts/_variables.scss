@@ -1,0 +1,28 @@
+// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #191825;
+
+$color-primary: #5d50c6;
+$color-secondary: #f85e9f;
+$color-accent-orange: #ff5722;
+$color-accent-yellow: #facd49;
+
+$color-dark: #222831;
+$color-medium: #393e46;
+$color-light: #eeeeee;
+
+// === Fonts ===
+$font-circular: 'Circular Std';
+$font-inter: 'Inter';
+$font-default: $font-circular;
+
+// Font Weights
+$font-regular: 400;
+$font-bold: 700;
+
+// Containerization
+$container-max-width: 1440px;
+$container-padding-sm: 1.6rem; // Mobile
+$container-padding-md: 6.4rem; // Tablet
+$container-padding-lg: 13rem; // Desktop
