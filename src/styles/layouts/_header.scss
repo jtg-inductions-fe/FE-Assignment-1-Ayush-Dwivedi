@@ -1,0 +1,166 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    z-index: 1000;
+    background-color: rgba($color-white, 0.95);
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.3s ease;
+    position: sticky;
+    top: 0;
+    body.scrolled & {
+        height: 12rem;
+        box-shadow: 0 0.4rem 1rem rgba($color-black, 0.05);
+    }
+
+    &__gradient {
+        position: absolute;
+        top: -3.6rem;
+        left: -3.2rem;
+        width: 27.2rem;
+        height: 34.8rem;
+        background-color: rgba($color-accent-orange, 0.5);
+        pointer-events: none;
+        border-radius: 50%;
+        filter: blur(15rem);
+    }
+
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse; // Mobile: hamburger on right
+        padding-top: 4rem;
+
+        @include media(md) {
+            flex-direction: row; // Tablet: hamburger on left
+        }
+
+        @include media(lg) {
+            body.scrolled & {
+                top: -2rem;
+            }
+        }
+    }
+
+    &__logo {
+        height: 4rem;
+    }
+
+    &__menu-toggle {
+        background: none;
+        border: none;
+        display: block;
+
+        @include media(lg) {
+            display: none; // Hidden on desktop
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 8.5rem;
+        left: auto;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        height: calc(100vh - 8.5rem);
+        width: 100%;
+        max-width: 1024px;
+        border: 1px solid $color-light;
+        background: $color-white;
+        transition:
+            right 0.3s ease,
+            opacity 0.3s ease;
+        z-index: 999;
+        text-align: center;
+
+        &.is-open {
+            right: 0;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @include media(md) {
+            left: -100%;
+            right: auto;
+            max-width: 50%;
+            transition: left 0.3s ease;
+            &.is-open {
+                left: 0;
+            }
+        }
+
+        @include media(lg) {
+            display: block;
+            height: auto;
+            position: static;
+            max-width: fit-content;
+            transform: none;
+            background: transparent;
+            border: none;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        padding: 4rem 6rem;
+
+        @include media(lg) {
+            flex-direction: row;
+            align-items: center;
+            white-space: nowrap;
+            gap: 6.4rem;
+        }
+    }
+
+    &__nav-link {
+        font-weight: $font-bold;
+        color: rgba($color-grey, 0.5);
+
+        &:hover {
+            color: $color-dark;
+            text-decoration: underline;
+        }
+    }
+
+    &__auth {
+        &--mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+
+            @include media(md) {
+                display: none;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @include media(md) {
+                display: flex;
+            }
+        }
+    }
+}
+
+.header__menu-toggle.is-active .icon-hamburger {
+    transform: rotate(90deg);
+}
+
+// ===== ICON STYLING =====
+
+.icon-hamburger {
+    font-size: 4rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}

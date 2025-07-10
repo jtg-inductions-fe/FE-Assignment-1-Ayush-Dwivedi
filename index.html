@@ -7,6 +7,69 @@
         <link rel="icon" type="image/x-icon" href="/assets/images/logo.ico" />
     </head>
     <body>
+        <header class="header" role="banner">
+            <div class="container header__container">
+                <div class="header__gradient" aria-hidden="true"></div>
+                <!-- Hamburger (mobile/tab) -->
+                <button
+                    class="header__menu-toggle"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="icon-hamburger" aria-hidden="true"></span>
+                </button>
+
+                <!-- Logo -->
+                <a href="/" class="header__logo" aria-label="Homepage">
+                    <img src="/assets/images/logo.ico" alt="Company Logo" />
+                </a>
+
+                <!-- Primary Navigation -->
+                <nav class="header__nav" aria-label="Main navigation">
+                    <ul
+                        id="primary-navigation"
+                        class="text--anchor header__nav-list"
+                        hidden
+                    >
+                        <li>
+                            <a href="#home" class="header__nav-link"> Home </a>
+                        </li>
+                        <li>
+                            <a href="#discover" class="header__nav-link"
+                                >Discover</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#special-deals" class="header__nav-link"
+                                >Special Deals</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#contact" class="header__nav-link"
+                                >Contact</a
+                            >
+                        </li>
+
+                        <!-- Only visible in mobile menu -->
+                        <li class="text--anchor header__auth--mobile">
+                            <a href="/login" class="btn btn--secondary"
+                                >Log In</a
+                            >
+                            <a href="/signup" class="btn btn--primary"
+                                >Sign Up</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Auth buttons for tablet/desktop only -->
+                <div class="text--anchor header__auth--desktop">
+                    <a href="/login" class="btn header__link">Log In</a>
+                    <a href="/signup" class="btn btn--primary">Sign Up</a>
+                </div>
+            </div>
+        </header>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

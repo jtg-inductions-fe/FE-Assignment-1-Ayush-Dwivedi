@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+
+.btn {
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    padding: 1.6rem 3.2rem;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover,
+        &:focus-visible {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+
+    &--secondary {
+        border: 1px solid $color-light;
+    }
+}
