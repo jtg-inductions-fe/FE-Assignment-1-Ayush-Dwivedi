@@ -7,7 +7,7 @@
         margin: 6.4rem auto;
         text-align: center;
         @include flex($direction: column);
-        gap: 6.4rem;
+        gap: 9.2rem;
 
         @include media(md) {
             margin: 8.6rem auto;
@@ -29,6 +29,14 @@
         @include media(lg) {
             flex-direction: row-reverse;
             gap: 0;
+            margin-bottom: 6.4rem;
+        }
+    }
+
+    &__image {
+        @include media(lg) {
+            height: 713px;
+            max-width: 772px;
         }
     }
 
@@ -43,6 +51,7 @@
 
         @include media(lg) {
             align-items: flex-start;
+            text-wrap: wrap;
         }
     }
 
@@ -72,6 +81,7 @@
 
     &__title {
         color: $color-black;
+        max-width: 16ch;
     }
 
     &__title-highlight {
@@ -80,6 +90,7 @@
 
     &__description {
         color: rgba($color-dark, 0.5);
+        max-width: 38ch;
     }
 
     &__cta {
@@ -101,12 +112,22 @@
         text-wrap: nowrap;
     }
 
+    &__button:first-of-type {
+        box-shadow: 0 0.4rem 1rem rgba($color-black, 0.2);
+    }
+
     &__logos {
         @include flex();
         flex-wrap: wrap;
         gap: 2.6rem 3.2rem;
 
         @include media(md) {
+            padding: 6.4rem 11.2rem;
+        }
+
+        @include media(lg) {
+            width: 100%;
+            justify-content: space-between;
             padding: 6.4rem 0;
         }
     }
@@ -130,7 +151,12 @@
     @include media(md) {
         display: block;
         position: absolute;
-        bottom: 1.4rem;
-        left: -2.6rem;
+        bottom: -4.4rem;
+        left: -17.6rem;
+    }
+
+    @include media(lg) {
+        left: -10rem;
+        bottom: -20rem;
     }
 }
