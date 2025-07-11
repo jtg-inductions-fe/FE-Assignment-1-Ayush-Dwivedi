@@ -107,6 +107,125 @@
                 </div>
             </div>
         </header>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="container hero__container">
+                    <div class="hero__body">
+                        <picture class="hero__picture">
+                            <!-- Desktop First (min-width: 1440px) -->
+                            <source
+                                srcset="/assets/images/hero-desktop.png"
+                                media="(min-width: 1440px)"
+                                type="image/png"
+                            />
+                            <!-- Tablet (1024px to 1440px) -->
+                            <source
+                                srcset="/assets/images/hero-tablet.png"
+                                media="(min-width: 1024px)"
+                                type="image/png"
+                            />
+                            <!-- Mobile (below 1024px) -->
+                            <img
+                                src="/assets/images/hero.png"
+                                alt="Designed image of places and destinations"
+                                class="hero__image"
+                            />
+                        </picture>
+                        <div class="hero__content">
+                            <img
+                                src="/assets/images/rectangle-pattern.svg"
+                                alt=""
+                                class="decor-pattern"
+                                aria-hidden="true"
+                            />
+                            <div class="hero__text">
+                                <div
+                                    class="text--anchor hero__badge"
+                                    aria-label="Explore the World"
+                                >
+                                    <span class="hero__badge-text"
+                                        >Explore the world!</span
+                                    >
+                                    <span
+                                        class="hero__badge-icon"
+                                        aria-hidden="true"
+                                    >
+                                        <i class="icon-bag"></i>
+                                    </span>
+                                </div>
+                                <h1
+                                    id="hero-title"
+                                    class="heading--h1 hero__title"
+                                >
+                                    Travel
+                                    <span class="hero__title-highlight"
+                                        >top destination</span
+                                    >
+                                    of the world
+                                </h1>
+                                <p class="text--primary hero__description">
+                                    We always make our customer happy by
+                                    providing as many choices as possible
+                                </p>
+                            </div>
+                            <div class="text--anchor hero__cta">
+                                <a
+                                    href="#start"
+                                    class="btn btn--primary hero__button"
+                                    >Get Started</a
+                                >
+                                <a
+                                    href="#video"
+                                    class="btn btn--secondary hero__button"
+                                >
+                                    <span
+                                        class="hero__button-icon"
+                                        aria-hidden="true"
+                                    >
+                                        <i class="icon-play"></i>
+                                    </span>
+                                    <span class="hero__button-label"
+                                        >Watch Demo</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="hero__logos"
+                        aria-label="Trusted by leading brands"
+                    >
+                        <img
+                            src="/assets/images/tripadvisor.png"
+                            alt="Tripadvisor logo"
+                            class="hero__logo"
+                        />
+                        <img
+                            src="/assets/images/expedia.png"
+                            alt="Expedia logo"
+                            class="hero__logo"
+                        />
+                        <img
+                            src="/assets/images/booking.png"
+                            alt="Booking.com Logo"
+                            class="hero__logo"
+                        />
+                        <img
+                            src="/assets/images/airbnb.png"
+                            alt="Airbnb Logo"
+                            class="hero__logo"
+                        />
+                        <img
+                            src="/assets/images/orbitz.png"
+                            alt="Orbitz Logo"
+                            class="hero__logo"
+                        />
+                    </div>
+                </div>
+            </section>
+        </main>
+
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

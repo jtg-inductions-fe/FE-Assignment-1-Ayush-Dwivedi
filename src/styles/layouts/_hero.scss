@@ -1,0 +1,136 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.hero {
+    &__container {
+        width: 100%;
+        margin: 6.4rem auto;
+        text-align: center;
+        @include flex($direction: column);
+        gap: 6.4rem;
+
+        @include media(md) {
+            margin: 8.6rem auto;
+        }
+
+        @include media(lg) {
+            gap: 0;
+        }
+    }
+
+    &__body {
+        @include flex($direction: column);
+        gap: 3.2rem;
+
+        @include media(md) {
+            gap: 6.4rem;
+        }
+
+        @include media(lg) {
+            flex-direction: row-reverse;
+            gap: 0;
+        }
+    }
+
+    &__content {
+        position: relative;
+        @include flex($direction: column);
+        gap: 3.2rem;
+
+        @include media(md) {
+            gap: 4.3rem;
+        }
+
+        @include media(lg) {
+            align-items: flex-start;
+        }
+    }
+
+    &__text {
+        @include flex($direction: column);
+        gap: 2.4rem;
+
+        @include media(md) {
+            gap: 4.3rem;
+        }
+
+        @include media(lg) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &__badge {
+        color: $color-secondary;
+        padding: 1.6rem 3.2rem;
+        @include flex();
+        gap: 1.6rem;
+        background-color: $color-white;
+        box-shadow: 0 0.4rem 1rem rgba($color-black, 0.05);
+        border-radius: 10rem;
+    }
+
+    &__title {
+        color: $color-black;
+    }
+
+    &__title-highlight {
+        color: $color-secondary;
+    }
+
+    &__description {
+        color: rgba($color-dark, 0.5);
+    }
+
+    &__cta {
+        @include flex($direction: column);
+        gap: 2.4rem;
+        width: 100%;
+
+        @include media(md) {
+            width: fit-content;
+            flex-direction: row;
+            gap: 1.6rem;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        @include flex();
+        gap: 0.8rem;
+        text-wrap: nowrap;
+    }
+
+    &__logos {
+        @include flex();
+        flex-wrap: wrap;
+        gap: 2.6rem 3.2rem;
+
+        @include media(md) {
+            padding: 6.4rem 0;
+        }
+    }
+
+    &__logo {
+        height: 2rem;
+
+        @include media(md) {
+            height: 3.2rem;
+        }
+    }
+}
+
+.icon-play {
+    font-size: 2rem;
+}
+
+.decor-pattern {
+    display: none;
+
+    @include media(md) {
+        display: block;
+        position: absolute;
+        bottom: 1.4rem;
+        left: -2.6rem;
+    }
+}
