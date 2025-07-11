@@ -2,21 +2,23 @@
 @use '../abstracts/mixins' as *;
 
 .header {
+    position: sticky;
+    top: 0;
+    @include flex();
     z-index: 1000;
+
     background-color: rgba($color-white, 0.95);
     backdrop-filter: blur(10px);
     transition: box-shadow 0.3s ease;
-    position: sticky;
-    top: 0;
+
     body.scrolled & {
-        height: 12rem;
         box-shadow: 0 0.4rem 1rem rgba($color-black, 0.05);
     }
 
     &__gradient {
         position: absolute;
         top: -3.6rem;
-        left: -3.2rem;
+        left: -1.2rem;
         width: 27.2rem;
         height: 34.8rem;
         background-color: rgba($color-accent-orange, 0.5);
@@ -31,21 +33,26 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: row-reverse; // Mobile: hamburger on right
-        padding-top: 4rem;
+        padding-top: 3.8rem;
+        padding-bottom: 0.4rem;
 
         @include media(md) {
             flex-direction: row; // Tablet: hamburger on left
+            padding: 3.4rem 6.6rem;
         }
 
         @include media(lg) {
+            padding: 4rem 13rem;
+            transition: padding 0.3s ease;
             body.scrolled & {
-                top: -2rem;
+                padding: 2.4rem 13rem 0.4rem 13rem;
             }
         }
     }
 
     &__logo {
         height: 4rem;
+        position: relative;
     }
 
     &__menu-toggle {

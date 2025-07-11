@@ -16,12 +16,18 @@
                     aria-controls="primary-navigation"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
+                    title="Toggle navigation menu"
                 >
                     <span class="icon-hamburger" aria-hidden="true"></span>
                 </button>
 
                 <!-- Logo -->
-                <a href="/" class="header__logo" aria-label="Homepage">
+                <a
+                    href="/"
+                    class="header__logo"
+                    aria-label="Go to Homepage"
+                    title="Go to homepage"
+                >
                     <img src="/assets/images/logo.ico" alt="Company Logo" />
                 </a>
 
@@ -33,30 +39,51 @@
                         hidden
                     >
                         <li>
-                            <a href="#home" class="header__nav-link"> Home </a>
+                            <a
+                                href="#home"
+                                class="header__nav-link"
+                                title="Go to Home section"
+                            >
+                                Home
+                            </a>
                         </li>
                         <li>
-                            <a href="#discover" class="header__nav-link"
+                            <a
+                                href="#discover"
+                                class="header__nav-link"
+                                title="Discover destinations and features"
                                 >Discover</a
                             >
                         </li>
                         <li>
-                            <a href="#special-deals" class="header__nav-link"
+                            <a
+                                href="#special-deals"
+                                class="header__nav-link"
+                                title="View special deals and offers"
                                 >Special Deals</a
                             >
                         </li>
                         <li>
-                            <a href="#contact" class="header__nav-link"
+                            <a
+                                href="#contact"
+                                class="header__nav-link"
+                                title="Contact us section"
                                 >Contact</a
                             >
                         </li>
 
                         <!-- Only visible in mobile menu -->
                         <li class="text--anchor header__auth--mobile">
-                            <a href="/login" class="btn btn--secondary"
+                            <a
+                                href="/login"
+                                class="btn btn--secondary"
+                                title="Log in to your account"
                                 >Log In</a
                             >
-                            <a href="/signup" class="btn btn--primary"
+                            <a
+                                href="/signup"
+                                class="btn btn--primary"
+                                title="Create a new account"
                                 >Sign Up</a
                             >
                         </li>
@@ -65,8 +92,18 @@
 
                 <!-- Auth buttons for tablet/desktop only -->
                 <div class="text--anchor header__auth--desktop">
-                    <a href="/login" class="btn header__link">Log In</a>
-                    <a href="/signup" class="btn btn--primary">Sign Up</a>
+                    <a
+                        href="/login"
+                        class="btn header__link"
+                        title="Log in to your account"
+                        >Log In</a
+                    >
+                    <a
+                        href="/signup"
+                        class="btn btn--primary"
+                        title="Create a new account"
+                        >Sign Up</a
+                    >
                 </div>
             </div>
         </header>
