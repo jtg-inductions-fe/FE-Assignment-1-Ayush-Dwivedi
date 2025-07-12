@@ -6,17 +6,19 @@
     &__container {
         position: relative;
         @include flex($direction: column);
-        gap: 3.2rem;
+        gap: 2.8rem;
 
         @include media(md) {
             gap: 6.4rem;
-            padding-top: 6.4rem;
-            padding-bottom: 6.4rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         @include media(lg) {
             flex-direction: row;
-            gap: 0.4rem;
+            gap: 0rem;
+            padding-top: 0;
+            padding-bottom: 0;
         }
     }
 
@@ -33,7 +35,9 @@
     }
 
     &__header {
+        text-align: center;
         @include media(lg) {
+            justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
         }
@@ -55,7 +59,7 @@
     }
 
     &__card {
-        @include flex($direction: column);
+        @include flex($justify: flex-start, $direction: column);
         gap: 3.2rem;
         padding: 3.2rem;
         text-align: center;
@@ -68,7 +72,8 @@
         }
 
         @include media(lg) {
-            padding: 5.2rem 6.4rem 11rem 6.4rem;
+            padding: 6.4rem;
+            min-height: 443px;
             &:last-child {
                 display: none;
             }
