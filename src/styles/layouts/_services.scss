@@ -77,7 +77,7 @@
 
         h4 {
             @extend .heading--h4;
-            @include clamp-lines(1);
+            @include clamp-lines(2);
             color: $color-grey;
         }
 
