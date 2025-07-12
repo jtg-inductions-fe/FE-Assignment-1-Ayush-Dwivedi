@@ -4,23 +4,28 @@
 .hero {
     &__container {
         width: 100%;
-        margin: 6.4rem auto;
         text-align: center;
+        padding-top: 6.4rem;
+        padding-bottom: 6.4rem;
+
         @include flex($direction: column);
-        gap: 9.2rem;
+        gap: 6.4rem;
 
         @include media(md) {
-            margin: 8.6rem auto;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            gap: 9.2rem;
         }
 
         @include media(lg) {
-            gap: 0;
+            gap: 3.2rem;
+            padding-top: 0;
         }
     }
 
     &__body {
         @include flex($direction: column);
-        gap: 3.2rem;
+        gap: 3rem;
 
         @include media(md) {
             gap: 6.4rem;
@@ -29,21 +34,32 @@
         @include media(lg) {
             flex-direction: row-reverse;
             gap: 0;
-            margin-bottom: 6.4rem;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-top: 2.6rem;
+            padding-bottom: 2.6rem;
+        }
+    }
+
+    &__picture {
+        @include media(lg) {
+            flex-shrink: 0;
+            height: 713px;
+            width: 772px;
         }
     }
 
     &__image {
         @include media(lg) {
-            height: 713px;
-            max-width: 772px;
+            height: 100%;
+            max-width: 100%;
         }
     }
 
     &__content {
         position: relative;
         @include flex($direction: column);
-        gap: 3.2rem;
+        gap: 3.4rem;
 
         @include media(md) {
             gap: 4.3rem;
@@ -51,12 +67,14 @@
 
         @include media(lg) {
             align-items: flex-start;
+            padding-top: 6.8rem;
+            padding-bottom: 6.8rem;
         }
     }
 
     &__text {
         @include flex($direction: column);
-        gap: 2.4rem;
+        gap: 1.8rem;
 
         @include media(md) {
             gap: 4.3rem;
@@ -65,6 +83,7 @@
         @include media(lg) {
             align-items: flex-start;
             text-align: left;
+            gap: 4rem;
         }
     }
 
@@ -81,6 +100,9 @@
     &__title {
         color: $color-black;
         max-width: 16ch;
+        @include media(lg) {
+            line-height: 1.3;
+        }
     }
 
     &__title-highlight {
@@ -121,7 +143,7 @@
         gap: 2.6rem 3.2rem;
 
         @include media(md) {
-            padding: 6.4rem 11.2rem;
+            padding: 6.4rem 9.4rem;
         }
 
         @include media(lg) {
@@ -144,6 +166,10 @@
     font-size: 2rem;
 }
 
+.icon-bag {
+    font-size: 2rem;
+}
+
 .decor-pattern {
     display: none;
 
@@ -155,7 +181,7 @@
     }
 
     @include media(lg) {
-        left: -10rem;
-        bottom: -20rem;
+        left: -9rem;
+        bottom: -14rem;
     }
 }
