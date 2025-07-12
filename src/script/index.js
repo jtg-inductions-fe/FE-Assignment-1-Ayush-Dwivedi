@@ -7,11 +7,14 @@ const toggleBtn = document.querySelector('.header__menu-toggle');
 const navWrapper = document.querySelector('.header__nav'); // <nav>
 const navList = document.getElementById('primary-navigation'); // <ul>
 
+let isScrolled = false;
+
 function closeSidebar() {
     toggleBtn.setAttribute('aria-expanded', 'false');
     navList.hidden = true;
     navWrapper.classList.remove('is-open');
     toggleBtn.classList.remove('is-active');
+    document.body.classList.remove('is-active');
 }
 
 toggleBtn.addEventListener('click', () => {
@@ -22,6 +25,7 @@ toggleBtn.addEventListener('click', () => {
 
     // ✅ Toggle rotation class on hamburger icon
     toggleBtn.classList.toggle('is-active');
+    document.body.classList.toggle('is-active', !expanded);
 });
 
 // Click outside to close (for tab view only)
@@ -41,9 +45,16 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Add 'scrolled' class on desktop scroll
 window.addEventListener('scroll', () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 10);
+    const y = window.scrollY;
+
+    if (!isScrolled && y > 100) {
+        document.body.classList.add('scrolled');
+        isScrolled = true;
+    } else if (isScrolled && y < 50) {
+        document.body.classList.remove('scrolled');
+        isScrolled = false;
+    }
 });
 
 function setMobileTabOrder() {

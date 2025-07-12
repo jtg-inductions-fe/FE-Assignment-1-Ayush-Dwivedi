@@ -42,7 +42,7 @@
         }
 
         @include media(lg) {
-            padding: 4rem 13rem;
+            padding: 4.2rem 12.4rem;
             transition: padding 0.3s ease;
             body.scrolled & {
                 padding: 2.4rem 13rem 0.4rem 13rem;
@@ -162,6 +162,11 @@
 
 .header__menu-toggle.is-active .icon-hamburger {
     transform: rotate(90deg);
+}
+
+body.is-active {
+    overflow: hidden;
+    height: 100vh;
 }
 
 // ===== ICON STYLING =====
