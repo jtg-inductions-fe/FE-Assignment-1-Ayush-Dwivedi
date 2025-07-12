@@ -1,0 +1,90 @@
+@use '../base/typography' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.services {
+    &__container {
+        @include flex($direction: column);
+        gap: 3.2rem;
+
+        @include media(md) {
+            gap: 6.4rem;
+            padding-top: 6.4rem;
+            padding-bottom: 6.4rem;
+        }
+
+        @include media(lg) {
+            flex-direction: row;
+            gap: 0.4rem;
+        }
+    }
+
+    &__header {
+        @include media(lg) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+
+        @include media(md) {
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+        }
+
+        @include media(lg) {
+            gap: 2.1rem;
+        }
+    }
+
+    &__card {
+        @include flex($direction: column);
+        gap: 3.2rem;
+        padding: 3.2rem;
+        text-align: center;
+        border: 1px solid rgba($color-grey, 0.1);
+        border-radius: 3.2rem;
+
+        @include media(md) {
+            padding: 6.4rem 6.4rem 3.2rem 6.4rem;
+            gap: 6.4rem;
+        }
+
+        @include media(lg) {
+            padding: 5.2rem 6.4rem 11rem 6.4rem;
+            &:last-child {
+                display: none;
+            }
+        }
+
+        &-text {
+            @include flex($direction: column);
+            gap: 3.2rem;
+        }
+
+        &:hover {
+            box-shadow: 0 0.4rem 1rem rgba($color-black, 0.2);
+        }
+
+        &__logo {
+            height: 6.4rem;
+            width: 6.4rem;
+        }
+
+        h4 {
+            @extend .heading--h4;
+            @include clamp-lines(1);
+            color: $color-grey;
+        }
+
+        p {
+            @extend .text--primary--v3;
+            @include clamp-lines(4);
+            color: rgba($color-grey, 0.5);
+        }
+    }
+}
