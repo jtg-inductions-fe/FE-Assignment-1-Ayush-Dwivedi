@@ -4,6 +4,7 @@
 
 .services {
     &__container {
+        position: relative;
         @include flex($direction: column);
         gap: 3.2rem;
 
@@ -17,6 +18,18 @@
             flex-direction: row;
             gap: 0.4rem;
         }
+    }
+
+    &__gradient {
+        position: absolute;
+        top: -19.6rem;
+        right: 0rem;
+        width: 27.2rem;
+        height: 34.8rem;
+        background-color: rgba($color-accent-yellow, 0.5);
+        pointer-events: none;
+        border-radius: 50%;
+        filter: blur(15rem);
     }
 
     &__header {
