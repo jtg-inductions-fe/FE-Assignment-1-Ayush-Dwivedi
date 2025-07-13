@@ -18,3 +18,15 @@
         color: $color-grey;
     }
 }
+
+.section__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    p {
+        @extend .text--primary;
+
+        color: rgba($color-grey, 0.5);
+    }
+}
