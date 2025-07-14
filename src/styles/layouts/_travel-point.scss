@@ -19,7 +19,7 @@
 
         @include media(lg) {
             flex-direction: row;
-            padding: 12rem $container-padding-lg 11.6rem 0;
+            padding: 12rem $container-padding-lg 12rem 0;
             gap: 0;
             align-items: flex-end;
         }
@@ -83,9 +83,9 @@
             &::before {
                 content: '';
                 position: absolute;
-                top: -10.2rem;
-                right: -21.2rem;
-                width: 100%;
+                top: -19.8rem;
+                right: -5.8rem;
+                width: 116px;
                 height: 100%;
                 background: url('/assets/images/star.png') no-repeat
                     center/contain;
