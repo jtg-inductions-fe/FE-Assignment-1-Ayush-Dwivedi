@@ -1,0 +1,149 @@
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+@use '../abstracts/variables' as *;
+
+.features {
+    &__container {
+        @include flex($direction: column);
+        gap: 10.8rem;
+        padding-top: 2.8rem;
+        padding-bottom: 2.8rem;
+
+        @include media(md) {
+            padding-top: 4.2rem;
+            padding-bottom: 4.2rem;
+            gap: 6.8rem;
+            width: 100%;
+        }
+
+        @include media(lg) {
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            padding-top: 1rem;
+            padding-bottom: 1.2rem;
+        }
+    }
+
+    &__image-wrapper {
+        max-width: 350px;
+
+        @include media(md) {
+            max-width: unset;
+            width: 693px;
+        }
+
+        @include media(lg) {
+            width: 86.4rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__header > p {
+        max-width: 70ch;
+    }
+
+    &__content {
+        @include flex($direction: column);
+        gap: 5.6rem;
+
+        @include media(md) {
+            gap: 6.4rem;
+        }
+
+        @include media(lg) {
+            gap: 5rem;
+        }
+    }
+
+    &__header {
+        text-align: center;
+
+        @include media(lg) {
+            text-align: left;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.6rem;
+        width: 100%;
+
+        @include media(md) {
+            gap: 0.4rem;
+        }
+
+        @include media(lg) {
+            padding: 1.4rem;
+        }
+    }
+
+    &__card {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3.2rem;
+        width: 100%;
+        padding: 3.2rem 6.4rem;
+        border-radius: 3.2rem;
+
+        &:nth-child(2) {
+            border: 1px solid rgba($color-grey, 0.1);
+        }
+
+        @include media(md) {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 3rem 1.6rem;
+        }
+    }
+
+    &__icon-wrapper {
+        @include flex();
+        height: 10rem;
+        width: 10rem;
+        border-radius: 3.2rem;
+        font-size: 3.6rem;
+    }
+
+    &__text-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    &__title {
+        @extend .heading--h4--v2;
+        letter-spacing: -0.07rem;
+        color: $color-grey;
+    }
+
+    &__description {
+        @extend .text--primary--v3;
+        color: rgba($color-grey, 0.5);
+        max-width: 20ch;
+
+        @include media(md) {
+            max-width: max-content;
+        }
+    }
+}
+
+.features__card:nth-child(1) .features__icon-wrapper {
+    background-color: $color-accent-orange;
+}
+
+.features__card:nth-child(2) .features__icon-wrapper {
+    background-color: $color-accent-yellow;
+}
+
+.features__card:nth-child(3) .features__icon-wrapper {
+    background-color: $color-secondary;
+}
