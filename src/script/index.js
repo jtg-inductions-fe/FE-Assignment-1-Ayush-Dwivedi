@@ -1,4 +1,5 @@
 import '../styles/main.scss';
+import { initCarousel } from './carousel.js';
 
 const BREAKPOINT_MD = 1024;
 const BREAKPOINT_LG = 1440;
@@ -77,3 +78,6 @@ setMobileTabOrder();
 
 // Re-check on resize
 window.addEventListener('resize', setMobileTabOrder);
+
+// Carousel
+initCarousel();

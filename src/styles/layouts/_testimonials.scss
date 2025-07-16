@@ -1,0 +1,188 @@
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+@use '../abstracts/variables' as *;
+
+.testimonials {
+    &__bg {
+        @include media(md) {
+            position: absolute;
+            top: -1.5rem;
+            height: 94rem;
+            width: 100%;
+            background-image: url('/assets/images/Vector.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 135%;
+            opacity: 0.1;
+        }
+
+        @include media(lg) {
+            background-size: 100%;
+            top: 1.8rem;
+        }
+    }
+
+    &__container {
+        position: relative;
+        @include flex($direction: column);
+        gap: 6.4rem;
+        text-align: center;
+        top: -2.2rem;
+        padding-bottom: 11.2rem;
+
+        @include media(md) {
+            top: 0;
+            padding-top: 8.6rem;
+            padding-bottom: 8.6rem;
+            gap: 5.4rem;
+        }
+
+        @include media(lg) {
+            padding-top: 4.8rem;
+            padding-bottom: 0;
+        }
+    }
+
+    &__carousel {
+        width: 100%;
+    }
+
+    &__card {
+        @include flex($direction: column);
+        gap: 6.4rem;
+
+        @include media(md) {
+            gap: 5.8rem;
+        }
+    }
+
+    &__pagination {
+        @include flex();
+        gap: 2.4rem;
+        padding-top: 6.4rem;
+
+        @include media(md) {
+            padding: 5.2rem;
+        }
+    }
+
+    &__bullet {
+        height: 2.4rem;
+        width: 2.4rem;
+        background-color: rgba($color-grey, 0.05);
+        border-radius: 50%;
+    }
+
+    &__bullet--active {
+        height: 2.4rem;
+        width: 2.4rem;
+        background-color: $color-secondary;
+        border-radius: 50%;
+    }
+
+    &__arrow {
+        z-index: 1000;
+        font-size: 1.2rem;
+        height: 6.4rem;
+        width: 6.4rem;
+        border: 1px solid rgba($color-grey, 0.1);
+        border-radius: 50%;
+        background-color: $color-white;
+        color: $color-black;
+        transition: background-color 0.3s ease;
+
+        &--prev {
+            position: absolute;
+            left: 1.6rem;
+            bottom: 0;
+
+            @include media(md) {
+                left: 6.4rem;
+                bottom: 47.2%;
+            }
+
+            @include media(lg) {
+                left: 12.2rem;
+                bottom: 43%;
+            }
+        }
+
+        &--next {
+            transform: rotate(180deg);
+            position: absolute;
+            right: 1.6rem;
+            bottom: 0;
+
+            @include media(md) {
+                right: 6.4rem;
+                bottom: 47.2%;
+            }
+
+            @include media(lg) {
+                right: 12.2rem;
+                bottom: 43%;
+            }
+        }
+
+        &:hover {
+            border: none;
+            background-color: $color-primary;
+            cursor: pointer;
+            color: $color-white;
+        }
+
+        &:active {
+            border: none;
+            background-color: $color-secondary;
+        }
+
+        @include media(md) {
+            height: 10rem;
+            width: 10rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+.testimonial {
+    &__meta {
+        gap: 3.2rem;
+        @include flex($direction: column);
+    }
+
+    &__name {
+        @extend .heading--h4--v3;
+
+        color: $color-accent-orange;
+    }
+
+    &__role {
+        @extend .heading--h4--v2;
+
+        color: rgba($color-grey, 0.75);
+    }
+
+    &__stars {
+        gap: 1.6rem;
+        @include flex();
+    }
+
+    &__text {
+        @extend .text--primary--v4;
+        color: rgba($color-grey, 0.75);
+
+        @include clamp-lines(3);
+
+        @include media(md) {
+            max-width: 55rem;
+        }
+
+        @include media(lg) {
+            max-width: 83rem;
+        }
+    }
+}
+
+.icon-star {
+    font-size: 3.2rem;
+}
