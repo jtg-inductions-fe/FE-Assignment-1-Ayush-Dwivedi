@@ -1,5 +1,4 @@
 @use '../abstracts/mixins' as *;
-@use '../base/typography' as *;
 @use '../abstracts/variables' as *;
 
 .testimonials {
@@ -152,12 +151,10 @@
     }
 
     &__name {
-        @extend .heading--h4--v3;
         color: $color-accent-orange;
     }
 
     &__role {
-        @extend .heading--h4--v2;
         color: rgba($color-grey, 0.75);
     }
 
@@ -167,7 +164,6 @@
     }
 
     &__text {
-        @extend .text--primary--v4;
         @include clamp-lines(3);
         color: rgba($color-grey, 0.75);
 
@@ -179,8 +175,4 @@
             max-width: 83rem;
         }
     }
-}
-
-.icon-star {
-    font-size: 3.2rem;
 }

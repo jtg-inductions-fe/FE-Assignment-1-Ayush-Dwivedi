@@ -1,5 +1,4 @@
 @use '../abstracts/mixins' as *;
-@use '../base/typography' as *;
 @use '../abstracts/variables' as *;
 
 .travel-point {
@@ -101,11 +100,9 @@
         gap: 1.6rem;
 
         &-stats {
-            @extend .text--stats;
             color: $color-accent-orange;
         }
         &-description {
-            @extend .text--primary--v3;
             color: $color-grey;
             text-transform: capitalize;
         }

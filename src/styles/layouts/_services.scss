@@ -1,4 +1,3 @@
-@use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
 
@@ -94,13 +93,11 @@
         }
 
         h4 {
-            @extend .heading--h4;
             @include clamp-lines(2);
             color: $color-grey;
         }
 
         p {
-            @extend .text--primary--v3;
             @include clamp-lines(4);
             color: rgba($color-grey, 0.5);
         }
