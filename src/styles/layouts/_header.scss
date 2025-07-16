@@ -47,6 +47,12 @@
         }
     }
 
+    &__menu-toggle.is-nav-open {
+        & .icon-hamburger {
+            transform: rotate(90deg);
+        }
+    }
+
     &__logo {
         height: 4rem;
         position: relative;
