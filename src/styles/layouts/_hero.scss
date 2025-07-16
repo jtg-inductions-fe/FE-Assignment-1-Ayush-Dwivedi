@@ -56,8 +56,8 @@
     }
 
     &__content {
-        position: relative;
         @include flex($direction: column);
+        position: relative;
         gap: 3.4rem;
 
         @include media(md) {
@@ -153,7 +153,7 @@
         }
     }
 
-    &__logo-img {
+    &__logos-img {
         height: 2rem;
 
         @include media(md) {

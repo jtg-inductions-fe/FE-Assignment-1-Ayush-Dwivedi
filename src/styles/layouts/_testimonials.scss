@@ -17,7 +17,7 @@
 
         @include media(lg) {
             background-size: 100%;
-            top: 1.8rem;
+            top: 3.2rem;
         }
     }
 
@@ -37,8 +37,8 @@
         }
 
         @include media(lg) {
-            padding-top: 4.8rem;
-            padding-bottom: 0;
+            padding-top: 6.4rem;
+            padding-bottom: 6.4rem;
         }
     }
 
@@ -103,8 +103,7 @@
             }
 
             @include media(lg) {
-                left: 12.2rem;
-                bottom: 43%;
+                left: 12.4rem;
             }
         }
 
@@ -120,8 +119,7 @@
             }
 
             @include media(lg) {
-                right: 12.2rem;
-                bottom: 43%;
+                right: 12.6rem;
             }
         }
 

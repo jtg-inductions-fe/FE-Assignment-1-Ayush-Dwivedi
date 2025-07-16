@@ -3,6 +3,8 @@ import { initCarousel } from './carousel.js';
 
 const BREAKPOINT_MD = 1024;
 const BREAKPOINT_LG = 1440;
+const SCROLL_THRESHOLD_DOWN = 100;
+const SCROLL_THRESHOLD_UP = 50;
 
 const toggleBtn = document.querySelector('.header__menu-toggle');
 const navWrapper = document.querySelector('.header__nav'); // <nav>
@@ -64,10 +66,10 @@ document.addEventListener('click', (e) => {
 window.addEventListener('scroll', () => {
     const y = window.scrollY;
 
-    if (!isScrolled && y > 100) {
+    if (!isScrolled && y > SCROLL_THRESHOLD_DOWN) {
         document.body.classList.add('scrolled');
         isScrolled = true;
-    } else if (isScrolled && y < 50) {
+    } else if (isScrolled && y < SCROLL_THRESHOLD_UP) {
         document.body.classList.remove('scrolled');
         isScrolled = false;
     }
