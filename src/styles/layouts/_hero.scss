@@ -9,7 +9,7 @@
         padding-bottom: 6.4rem;
 
         @include flex($direction: column);
-        gap: 6.4rem;
+        gap: 7rem;
 
         @include media(md) {
             padding-top: 6rem;
@@ -25,10 +25,10 @@
 
     &__body {
         @include flex($direction: column);
-        gap: 3rem;
+        gap: 3.4rem;
 
         @include media(md) {
-            gap: 6.4rem;
+            gap: 6.8rem;
         }
 
         @include media(lg) {
@@ -133,7 +133,7 @@
         white-space: nowrap;
     }
 
-    &__button:first-of-type {
+    &__button:hover {
         box-shadow: 0 0.4rem 1rem rgba($color-black, 0.2);
     }
 
@@ -153,7 +153,7 @@
         }
     }
 
-    &__logo {
+    &__logo-img {
         height: 2rem;
 
         @include media(md) {
@@ -162,26 +162,18 @@
     }
 }
 
-.icon-play {
-    font-size: 2rem;
-}
-
-.icon-bag {
-    font-size: 2rem;
-}
-
 .decor-pattern {
     display: none;
 
     @include media(md) {
         display: block;
         position: absolute;
-        bottom: -4.4rem;
-        left: -17.6rem;
+        bottom: -5rem;
+        left: -17.2rem;
     }
 
     @include media(lg) {
         left: -9rem;
-        bottom: -14rem;
+        bottom: -15rem;
     }
 }
