@@ -2,15 +2,13 @@
 @use '../abstracts/mixins' as *;
 
 .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
     gap: 0.8rem;
     padding: 2.4rem 3.2rem;
 
-    border-radius: 100px;
+    border-radius: 10rem;
     border: none;
-    cursor: pointer;
+    // cursor: pointer;
     transition:
         background-color 0.3s ease,
         color 0.3s ease;

@@ -25,11 +25,11 @@
     }
 
     &__image-wrapper {
-        max-width: 350px;
+        max-width: 35rem;
 
         @include media(md) {
             max-width: unset;
-            width: 693px;
+            width: 69.3rem;
         }
 
         @include media(lg) {
@@ -67,10 +67,7 @@
     }
 
     &__cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex($direction: column);
         gap: 0.6rem;
         width: 100%;
 
@@ -84,10 +81,7 @@
     }
 
     &__card {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
+        @include flex($direction: column, $align: flex-start);
         gap: 3.2rem;
         width: 100%;
         padding: 3.2rem 6.4rem;

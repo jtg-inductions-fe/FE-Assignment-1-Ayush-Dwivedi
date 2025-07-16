@@ -37,8 +37,6 @@
     &__header {
         text-align: center;
         @include media(lg) {
-            justify-content: flex-start;
-            align-items: flex-start;
             text-align: left;
         }
     }
@@ -73,7 +71,7 @@
 
         @include media(lg) {
             padding: 6.4rem;
-            min-height: 443px;
+            min-height: 44.3rem;
             // Hide third card on desktop to maintain 2-column layout
             &:last-child {
                 display: none;

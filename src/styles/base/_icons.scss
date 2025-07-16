@@ -1,0 +1,11 @@
+.icon-hamburger {
+    font-size: 4rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.header__menu-toggle.is-nav-open {
+    & .icon-hamburger {
+        transform: rotate(90deg);
+    }
+}

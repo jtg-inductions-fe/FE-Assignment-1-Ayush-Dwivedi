@@ -31,7 +31,7 @@
         }
 
         @include media(lg) {
-            width: 865px;
+            width: 86.5rem;
             padding: 0;
             flex-shrink: 0;
         }
@@ -85,7 +85,7 @@
                 position: absolute;
                 top: -19.8rem;
                 right: -5.8rem;
-                width: 116px;
+                width: 11.6rem;
                 height: 100%;
                 background: url('/assets/images/star.png') no-repeat
                     center/contain;
