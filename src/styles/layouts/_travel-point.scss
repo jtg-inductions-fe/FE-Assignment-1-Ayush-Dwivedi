@@ -6,7 +6,6 @@
     &__container {
         @include flex($direction: column);
         gap: 3.8rem;
-
         width: 100%;
         max-width: $container-max-width;
         margin: 0 auto;
@@ -95,20 +94,18 @@
     }
 
     &__card {
+        @include flex($direction: column);
         border: 1px solid rgba($color-grey, 0.1);
         border-radius: 3.2rem;
         padding: 3.2rem;
-        @include flex($direction: column);
         gap: 1.6rem;
 
         &-stats {
             @extend .text--stats;
-
             color: $color-accent-orange;
         }
         &-description {
             @extend .text--primary--v3;
-
             color: $color-grey;
             text-transform: capitalize;
         }

@@ -14,8 +14,9 @@
     }
 
     h3 {
-        color: $color-grey;
         @extend .heading--h3;
+        color: $color-grey;
+
         @include media(md) {
             letter-spacing: -0.06rem;
         }
@@ -29,7 +30,6 @@
 
     p {
         @extend .text--primary;
-
         color: rgba($color-grey, 0.5);
     }
 }

@@ -2,11 +2,10 @@
 @use '../abstracts/mixins' as *;
 
 .header {
+    @include flex();
     position: sticky;
     top: 0;
-    @include flex();
     z-index: 1000;
-
     background-color: rgba($color-white, 0.95);
     backdrop-filter: blur(1rem);
     transition: box-shadow 0.3s ease;
@@ -28,8 +27,8 @@
     }
 
     &__container {
-        position: relative;
         @include flex($justify: space-between, $direction: row-reverse);
+        position: relative;
         padding-top: 3.8rem;
         padding-bottom: 0.4rem;
 

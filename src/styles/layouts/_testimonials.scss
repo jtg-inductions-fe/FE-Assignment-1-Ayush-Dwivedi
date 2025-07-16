@@ -23,8 +23,8 @@
     }
 
     &__container {
-        position: relative;
         @include flex($direction: column);
+        position: relative;
         gap: 6.4rem;
         text-align: center;
         top: -2.2rem;
@@ -147,32 +147,29 @@
 
 .testimonial {
     &__meta {
-        gap: 3.2rem;
         @include flex($direction: column);
+        gap: 3.2rem;
     }
 
     &__name {
         @extend .heading--h4--v3;
-
         color: $color-accent-orange;
     }
 
     &__role {
         @extend .heading--h4--v2;
-
         color: rgba($color-grey, 0.75);
     }
 
     &__stars {
-        gap: 1.6rem;
         @include flex();
+        gap: 1.6rem;
     }
 
     &__text {
         @extend .text--primary--v4;
-        color: rgba($color-grey, 0.75);
-
         @include clamp-lines(3);
+        color: rgba($color-grey, 0.75);
 
         @include media(md) {
             max-width: 55rem;
