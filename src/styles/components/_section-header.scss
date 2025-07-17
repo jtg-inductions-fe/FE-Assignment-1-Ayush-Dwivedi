@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as *;
 @use '../base/typography' as *;
+@use '../abstracts/mixins' as *;
 
 .section__header {
     display: flex;
@@ -14,7 +15,9 @@
 
     h3 {
         @extend .heading--h3;
-
+        @include media(md) {
+            letter-spacing: -0.06rem;
+        }
         color: $color-grey;
     }
 }

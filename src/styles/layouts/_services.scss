@@ -74,6 +74,7 @@
         @include media(lg) {
             padding: 6.4rem;
             min-height: 443px;
+            // Hide third card on desktop to maintain 2-column layout
             &:last-child {
                 display: none;
             }

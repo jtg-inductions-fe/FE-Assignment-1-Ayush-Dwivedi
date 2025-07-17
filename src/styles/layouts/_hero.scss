@@ -130,7 +130,7 @@
         width: 100%;
         @include flex();
         gap: 0.8rem;
-        text-wrap: nowrap;
+        white-space: nowrap;
     }
 
     &__button:first-of-type {
