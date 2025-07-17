@@ -53,6 +53,14 @@
     &__logo {
         height: 4rem;
         position: relative;
+
+        @include media(md) {
+            left: 9rem;
+        }
+
+        @include media(lg) {
+            left: 0;
+        }
     }
 
     &__menu-toggle {
