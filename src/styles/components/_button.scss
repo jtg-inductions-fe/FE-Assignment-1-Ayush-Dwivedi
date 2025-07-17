@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 2.4rem 3.2rem;
+
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    @include media(md) {
+        padding: 1.6rem 3.2rem;
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+
+    &--secondary {
+        border: 1px solid $color-light;
+        &:hover,
+        &:focus {
+            background-color: darken($color-light, 10%);
+        }
+    }
+}
