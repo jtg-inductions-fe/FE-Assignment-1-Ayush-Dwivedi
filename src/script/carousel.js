@@ -3,6 +3,10 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 
+/**
+ * Initializes the Swiper carousel for the `.swiper` element
+ * with navigation arrows and clickable pagination.
+ */
 export function initCarousel() {
     new Swiper('.swiper', {
         modules: [Navigation, Pagination],

@@ -1,5 +1,5 @@
-@use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .testimonials {
     &__bg {
@@ -8,10 +8,7 @@
             top: -1.5rem;
             height: 94rem;
             width: 100%;
-            background-image: url('/assets/images/Vector.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 135%;
+            background: url('/assets/images/Vector.png') no-repeat center / 135%;
             opacity: 0.1;
         }
 
@@ -58,7 +55,7 @@
     &__pagination {
         @include flex();
         gap: 2.4rem;
-        padding-top: 6.4rem;
+        padding-top: 3.2rem;
 
         @include media(md) {
             padding: 5.2rem;
@@ -81,7 +78,7 @@
     }
 
     &__arrow {
-        z-index: 1000;
+        z-index: 999;
         font-size: 1.2rem;
         height: 6.4rem;
         width: 6.4rem;
@@ -148,11 +145,11 @@
         gap: 3.2rem;
     }
 
-    &__name {
+    &__author-name {
         color: $color-accent-orange;
     }
 
-    &__role {
+    &__author-role {
         color: rgba($color-grey, 0.75);
     }
 
