@@ -3,6 +3,7 @@
 
 .hero {
     &__container {
+        position: relative;
         @include flex($direction: column);
         width: 100%;
         text-align: center;
@@ -19,6 +20,24 @@
         @include media(lg) {
             gap: 3.2rem;
             padding-top: 0;
+        }
+    }
+
+    &__gradient {
+        z-index: 1001;
+        position: absolute;
+        width: 50rem;
+        height: 50rem;
+        background-color: rgba($color-accent-orange, 0.4);
+        pointer-events: none;
+        border-radius: 50%;
+        filter: blur(15rem);
+        top: -24.8rem;
+        left: -24.8rem;
+
+        @include media(lg) {
+            top: -16.8rem;
+            left: -12.8rem;
         }
     }
 
