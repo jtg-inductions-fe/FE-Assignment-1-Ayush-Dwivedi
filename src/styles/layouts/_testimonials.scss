@@ -1,0 +1,173 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.testimonials {
+    &__bg {
+        @include media(md) {
+            position: absolute;
+            top: -1.5rem;
+            height: 94rem;
+            width: 100%;
+            background: url('/assets/images/Vector.png') no-repeat center / 135%;
+            opacity: 0.1;
+        }
+
+        @include media(lg) {
+            background-size: 100%;
+            top: 3.2rem;
+        }
+    }
+
+    &__container {
+        @include flex($direction: column);
+        position: relative;
+        gap: 6.4rem;
+        text-align: center;
+        top: -2.2rem;
+        padding-bottom: 11.2rem;
+
+        @include media(md) {
+            top: 0;
+            padding-top: 8.6rem;
+            padding-bottom: 8.6rem;
+            gap: 5.4rem;
+        }
+
+        @include media(lg) {
+            padding-top: 6.4rem;
+            padding-bottom: 6.4rem;
+        }
+    }
+
+    &__carousel {
+        width: 100%;
+    }
+
+    &__card {
+        @include flex($direction: column);
+        gap: 6.4rem;
+
+        @include media(md) {
+            gap: 5.8rem;
+        }
+    }
+
+    &__pagination {
+        @include flex();
+        gap: 2.4rem;
+        padding-top: 3.2rem;
+
+        @include media(md) {
+            padding: 5.2rem;
+        }
+    }
+
+    &__bullet {
+        height: 2.4rem;
+        width: 2.4rem;
+        background-color: rgba($color-grey, 0.05);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    &__bullet--active {
+        height: 2.4rem;
+        width: 2.4rem;
+        background-color: $color-secondary;
+        border-radius: 50%;
+    }
+
+    &__arrow {
+        z-index: 999;
+        font-size: 1.2rem;
+        height: 6.4rem;
+        width: 6.4rem;
+        border: 1px solid rgba($color-grey, 0.1);
+        border-radius: 50%;
+        background-color: $color-white;
+        color: $color-black;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+
+        &--prev {
+            position: absolute;
+            left: 1.6rem;
+            bottom: 0;
+
+            @include media(md) {
+                left: 6.4rem;
+                bottom: 47.2%;
+            }
+
+            @include media(lg) {
+                left: 12.4rem;
+            }
+        }
+
+        &--next {
+            transform: rotate(180deg);
+            position: absolute;
+            right: 1.6rem;
+            bottom: 0;
+
+            @include media(md) {
+                right: 6.4rem;
+                bottom: 47.2%;
+            }
+
+            @include media(lg) {
+                right: 12.6rem;
+            }
+        }
+
+        &:hover {
+            border: none;
+            background-color: $color-primary;
+            color: $color-white;
+        }
+
+        &:active {
+            border: none;
+            background-color: $color-secondary;
+        }
+
+        @include media(md) {
+            height: 10rem;
+            width: 10rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+.testimonial {
+    &__meta {
+        @include flex($direction: column);
+        gap: 3.2rem;
+    }
+
+    &__author-name {
+        color: $color-accent-orange;
+    }
+
+    &__author-role {
+        color: rgba($color-grey, 0.75);
+    }
+
+    &__stars {
+        @include flex();
+        gap: 1.6rem;
+    }
+
+    &__text {
+        @include clamp-lines(3);
+        color: rgba($color-grey, 0.75);
+
+        @include media(md) {
+            max-width: 55rem;
+        }
+
+        @include media(lg) {
+            max-width: 83rem;
+        }
+    }
+}

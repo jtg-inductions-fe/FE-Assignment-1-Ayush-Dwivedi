@@ -7,11 +7,12 @@
         <link rel="icon" type="image/x-icon" href="/assets/images/logo.ico" />
     </head>
     <body>
-        <header class="header" role="banner">
+        <header class="header">
             <div class="container header__container">
                 <div class="header__gradient" aria-hidden="true"></div>
                 <!-- Hamburger (mobile/tab) -->
                 <button
+                    type="button"
                     class="header__menu-toggle"
                     aria-controls="primary-navigation"
                     aria-expanded="false"
@@ -42,7 +43,7 @@
                             <a
                                 href="#home"
                                 class="header__nav-link"
-                                title="Go to Home section"
+                                title="Go to Homepage"
                             >
                                 Home
                             </a>
@@ -67,7 +68,7 @@
                             <a
                                 href="#contact"
                                 class="header__nav-link"
-                                title="Contact us section"
+                                title="Contact us"
                                 >Contact</a
                             >
                         </li>
@@ -150,10 +151,9 @@
                                         >Explore the world!</span
                                     >
                                     <span
-                                        class="hero__badge-icon"
+                                        class="icon-bag hero__badge-icon"
                                         aria-hidden="true"
                                     >
-                                        <i class="icon-bag"></i>
                                     </span>
                                 </a>
                                 <h1
@@ -184,10 +184,9 @@
                                     title="Watch demo"
                                 >
                                     <span
-                                        class="hero__button-icon"
+                                        class="icon-play hero__button-icon"
                                         aria-hidden="true"
                                     >
-                                        <i class="icon-play"></i>
                                     </span>
                                     <span class="hero__button-label"
                                         >Watch Demo</span
@@ -202,28 +201,28 @@
                     >
                         <img
                             src="/assets/images/tripadvisor.png"
-                            alt="Tripadvisor logo"
-                            class="hero__logo"
+                            alt="Tripadvisor"
+                            class="hero__logos-img"
                         />
                         <img
                             src="/assets/images/expedia.png"
-                            alt="Expedia logo"
-                            class="hero__logo"
+                            alt="Expedia"
+                            class="hero__logos-img"
                         />
                         <img
                             src="/assets/images/booking.png"
-                            alt="Booking.com Logo"
-                            class="hero__logo"
+                            alt="Booking.com"
+                            class="hero__logos-img"
                         />
                         <img
                             src="/assets/images/airbnb.png"
-                            alt="Airbnb Logo"
-                            class="hero__logo"
+                            alt="Airbnb"
+                            class="hero__logos-img"
                         />
                         <img
                             src="/assets/images/orbitz.png"
-                            alt="Orbitz Logo"
-                            class="hero__logo"
+                            alt="Orbitz"
+                            class="hero__logos-img"
                         />
                     </div>
                 </div>
@@ -247,10 +246,12 @@
                                 class="services__card-image"
                             />
                             <div class="services__card-text">
-                                <h4 class="services__card-title">
+                                <h4 class="heading--h4 services__card-title">
                                     Best Tour Guide
                                 </h4>
-                                <p class="services__card-description">
+                                <p
+                                    class="text--primary--v3 services__card-description"
+                                >
                                     What looked like a small patch of purple
                                     grass, above five feet.
                                 </p>
@@ -264,10 +265,12 @@
                                 class="services__card-image"
                             />
                             <div class="services__card-text">
-                                <h4 class="services__card-title">
+                                <h4 class="heading--h4 services__card-title">
                                     Easy Booking
                                 </h4>
-                                <p class="services__card-description">
+                                <p
+                                    class="text--primary--v3 services__card-description"
+                                >
                                     Square, was moving across the sand in their
                                     direction.
                                 </p>
@@ -281,10 +284,12 @@
                                 class="services__card-image"
                             />
                             <div class="services__card-text">
-                                <h4 class="services__card-title">
+                                <h4 class="heading--h4 services__card-title">
                                     Weather Forecast
                                 </h4>
-                                <p class="services__card-description">
+                                <p
+                                    class="text--primary--v3 services__card-description"
+                                >
                                     What looked like a small patch of purple
                                     grass, above five feet.
                                 </p>
@@ -334,26 +339,54 @@
                         </div>
                         <div class="travel-point__cards">
                             <article class="travel-point__card">
-                                <p class="travel-point__card-stats">500+</p>
-                                <p class="travel-point__card-description">
+                                <p
+                                    class="text--stats travel-point__card-stats"
+                                    aria-label="Over 500 holiday packages available"
+                                >
+                                    500+
+                                </p>
+                                <p
+                                    class="text--primary--v3 travel-point__card-description"
+                                >
                                     Holiday Package
                                 </p>
                             </article>
                             <article class="travel-point__card">
-                                <p class="travel-point__card-stats">100</p>
-                                <p class="travel-point__card-description">
+                                <p
+                                    class="text--stats travel-point__card-stats"
+                                    aria-label="Around 100 luxury hotels around places"
+                                >
+                                    100
+                                </p>
+                                <p
+                                    class="text--primary--v3 travel-point__card-description"
+                                >
                                     Luxury Hotel
                                 </p>
                             </article>
                             <article class="travel-point__card">
-                                <p class="travel-point__card-stats">7</p>
-                                <p class="travel-point__card-description">
+                                <p
+                                    class="text--stats travel-point__card-stats"
+                                    aria-label="Around 7 premium airlines"
+                                >
+                                    7
+                                </p>
+                                <p
+                                    class="text--primary--v3 travel-point__card-description"
+                                >
                                     Premium Airlines
                                 </p>
                             </article>
                             <article class="travel-point__card">
-                                <p class="travel-point__card-stats">2k+</p>
-                                <p class="travel-point__card-description">
+                                <p
+                                    class="text--stats travel-point__card-stats"
+                                    aria-label="Over 2 thousand happy customers"
+                                >
+                                    2k+
+                                </p>
+                                <p
+                                    class="text--primary--v3 travel-point__card-description"
+                                >
                                     Happy Customer
                                 </p>
                             </article>
@@ -402,57 +435,309 @@
 
                         <div class="features__cards">
                             <article class="features__card">
-                                <div class="features__icon-wrapper">
-                                    <i
-                                        class="icon-location features__icon"
+                                <div class="features__card-icon-wrapper">
+                                    <span
+                                        class="icon-location"
                                         aria-hidden="true"
-                                    ></i>
+                                    ></span>
                                 </div>
-                                <div class="features__text-group">
-                                    <h4 class="features__title">
+                                <div class="features__card-text-group">
+                                    <h4
+                                        class="heading--h4--v2 features__card-title"
+                                    >
                                         We offer best services
                                     </h4>
-                                    <p class="features__description">
+                                    <p
+                                        class="text--primary--v3 features__card-description"
+                                    >
                                         Lorem Ipsum is not simply random text
                                     </p>
                                 </div>
                             </article>
 
                             <article class="features__card">
-                                <div class="features__icon-wrapper">
-                                    <i
-                                        class="icon-calendar features__icon"
+                                <div class="features__card-icon-wrapper">
+                                    <span
+                                        class="icon-calendar"
                                         aria-hidden="true"
-                                    ></i>
+                                    ></span>
                                 </div>
-                                <div class="features__text-group">
-                                    <h4 class="features__title">
+                                <div class="features__card-text-group">
+                                    <h4
+                                        class="heading--h4--v2 features__card-title"
+                                    >
                                         Schedule your trip
                                     </h4>
-                                    <p class="features__description">
+                                    <p
+                                        class="text--primary--v3 features__card-description"
+                                    >
                                         It has roots in a piece of classical
                                     </p>
                                 </div>
                             </article>
 
                             <article class="features__card">
-                                <div class="features__icon-wrapper">
-                                    <i
-                                        class="icon-discount features__icon"
+                                <div class="features__card-icon-wrapper">
+                                    <span
+                                        class="icon-discount"
                                         aria-hidden="true"
-                                    ></i>
+                                    ></span>
                                 </div>
-                                <div class="features__text-group">
-                                    <h4 class="features__title">
+                                <div class="features__card-text-group">
+                                    <h4
+                                        class="heading--h4--v2 features__card-title"
+                                    >
                                         Get discounted coupons
                                     </h4>
-                                    <p class="features__description">
+                                    <p
+                                        class="text--primary--v3 features__card-description"
+                                    >
                                         Lorem Ipsum is not simply random text
                                     </p>
                                 </div>
                             </article>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section
+                class="testimonials"
+                id="testimonials"
+                aria-labelledby="testimonials-title"
+            >
+                <div class="container testimonials__container">
+                    <div class="testimonials__bg" aria-hidden="true"></div>
+                    <header class="section__header">
+                        <h2 class="testimonials__title" id="testimonials-title">
+                            Testimonials
+                        </h2>
+                        <h3 class="testimonials__subtitle">
+                            Trust our clients
+                        </h3>
+                    </header>
+
+                    <!-- Slider main container -->
+                    <div class="swiper testimonials__carousel">
+                        <div class="swiper-wrapper">
+                            <!-- Slide -->
+                            <div
+                                class="swiper-slide"
+                                role="group"
+                                aria-label="Testimonial 1 of 3"
+                            >
+                                <div class="testimonials__card">
+                                    <img
+                                        src="/assets/images/avatar.png"
+                                        alt="Photo of Abhishek Kumar"
+                                        class="testimonial__image"
+                                    />
+
+                                    <div class="testimonial__meta">
+                                        <h4 class="testimonial__author">
+                                            <span
+                                                class="heading--h4--v3 testimonial__author-name"
+                                                >Abhishek Kumar
+                                            </span>
+                                            <span
+                                                class="heading--h4--v2 testimonial__author-role"
+                                                >/ SDE-3</span
+                                            >
+                                        </h4>
+
+                                        <div
+                                            class="testimonial__stars"
+                                            aria-label="5 out of 5 stars"
+                                        >
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <blockquote
+                                        class="text--primary--v4 testimonial__text"
+                                    >
+                                        Lorem Ipsum is not simply random text.
+                                        Contrary to popular belief, it has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <!-- Slide -->
+                            <div
+                                class="swiper-slide"
+                                role="group"
+                                aria-label="Testimonial 2 of 3"
+                            >
+                                <div class="testimonials__card">
+                                    <img
+                                        src="/assets/images/avatar.png"
+                                        alt="Photo of Mark Smith"
+                                        class="testimonial__image"
+                                    />
+
+                                    <div class="testimonial__meta">
+                                        <h4 class="testimonial__author">
+                                            <span
+                                                class="heading--h4--v3 testimonial__author-name"
+                                                >Mark Smith
+                                            </span>
+                                            <span
+                                                class="heading--h4--v2 testimonial__author-role"
+                                                >/ Travel Enthusiast</span
+                                            >
+                                        </h4>
+
+                                        <div
+                                            class="testimonial__stars"
+                                            aria-label="5 out of 5 stars"
+                                        >
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <blockquote
+                                        class="text--primary--v4 testimonial__text"
+                                    >
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <!-- Slide -->
+                            <div
+                                class="swiper-slide"
+                                role="group"
+                                aria-label="Testimonial 3 of 3"
+                            >
+                                <div class="testimonials__card">
+                                    <img
+                                        src="/assets/images/avatar.png"
+                                        alt="Photo of Aryan Singh"
+                                        class="testimonial__image"
+                                    />
+
+                                    <div class="testimonial__meta">
+                                        <h4 class="testimonial__author">
+                                            <span
+                                                class="heading--h4--v3 testimonial__author-name"
+                                                >Aryan Singh
+                                            </span>
+                                            <span
+                                                class="heading--h4--v2 testimonial__author-role"
+                                                >/ Marketing supervisor</span
+                                            >
+                                        </h4>
+
+                                        <div
+                                            class="testimonial__stars"
+                                            aria-label="5 out of 5 stars"
+                                        >
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                            <span
+                                                class="icon-star"
+                                                aria-hidden="true"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <blockquote
+                                        class="text--primary--v4 testimonial__text"
+                                    >
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <!-- Add more .swiper-slide here -->
+                        </div>
+
+                        <!-- Pagination (optional but should stay inside .swiper) -->
+                        <div
+                            class="testimonials__pagination"
+                            aria-hidden="true"
+                        ></div>
+                    </div>
+                    <!-- Arrows -->
+                    <button
+                        class="testimonials__arrow testimonials__arrow--prev"
+                        aria-label="Previous testimonial"
+                        type="button"
+                        title="Go to previous testimonial"
+                    >
+                        <span
+                            class="icon-arrow-right"
+                            aria-hidden="true"
+                        ></span>
+                    </button>
+                    <button
+                        class="testimonials__arrow testimonials__arrow--next"
+                        aria-label="Next testimonial"
+                        type="button"
+                        title="Go to next testimonial"
+                    >
+                        <span
+                            class="icon-arrow-right"
+                            aria-hidden="true"
+                        ></span>
+                    </button>
                 </div>
             </section>
         </main>

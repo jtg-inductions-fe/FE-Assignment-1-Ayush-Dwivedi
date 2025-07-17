@@ -1,6 +1,6 @@
+@use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 @use '../base/typography' as *;
-@use '../abstracts/variables' as *;
 
 .features {
     &__container {
@@ -20,29 +20,24 @@
             flex-direction: row-reverse;
             align-items: flex-start;
             padding-top: 1rem;
-            padding-bottom: 1.2rem;
+            padding-bottom: 1rem;
         }
     }
 
     &__image-wrapper {
-        max-width: 350px;
+        max-width: 35rem;
 
         @include media(md) {
-            max-width: unset;
-            width: 693px;
+            max-width: 69.3rem;
         }
 
         @include media(lg) {
-            width: 86.4rem;
+            max-width: 58rem;
         }
     }
 
     &__image {
         width: 100%;
-    }
-
-    &__header > p {
-        max-width: 70ch;
     }
 
     &__content {
@@ -61,16 +56,17 @@
     &__header {
         text-align: center;
 
+        & > p {
+            max-width: 70ch;
+        }
+
         @include media(lg) {
             text-align: left;
         }
     }
 
     &__cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex($direction: column);
         gap: 0.6rem;
         width: 100%;
 
@@ -79,22 +75,35 @@
         }
 
         @include media(lg) {
-            padding: 1.4rem;
+            padding: 1.2rem 0;
         }
     }
 
     &__card {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
+        @include flex($direction: column, $align: flex-start);
         gap: 3.2rem;
         width: 100%;
         padding: 3.2rem 6.4rem;
         border-radius: 3.2rem;
 
+        &:nth-child(1) {
+            & .features__card-icon-wrapper {
+                background-color: $color-accent-orange;
+            }
+        }
+
         &:nth-child(2) {
             border: 1px solid rgba($color-grey, 0.1);
+
+            & .features__card-icon-wrapper {
+                background-color: $color-accent-yellow;
+            }
+        }
+
+        &:nth-child(3) {
+            & .features__card-icon-wrapper {
+                background-color: $color-secondary;
+            }
         }
 
         @include media(md) {
@@ -105,7 +114,7 @@
         }
     }
 
-    &__icon-wrapper {
+    &__card-icon-wrapper {
         @include flex();
         height: 10rem;
         width: 10rem;
@@ -113,20 +122,18 @@
         font-size: 3.6rem;
     }
 
-    &__text-group {
+    &__card-text-group {
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
     }
 
-    &__title {
-        @extend .heading--h4--v2;
+    &__card-title {
         letter-spacing: -0.07rem;
         color: $color-grey;
     }
 
-    &__description {
-        @extend .text--primary--v3;
+    &__card-description {
         color: rgba($color-grey, 0.5);
         max-width: 20ch;
 
@@ -134,16 +141,4 @@
             max-width: max-content;
         }
     }
-}
-
-.features__card:nth-child(1) .features__icon-wrapper {
-    background-color: $color-accent-orange;
-}
-
-.features__card:nth-child(2) .features__icon-wrapper {
-    background-color: $color-accent-yellow;
-}
-
-.features__card:nth-child(3) .features__icon-wrapper {
-    background-color: $color-secondary;
 }

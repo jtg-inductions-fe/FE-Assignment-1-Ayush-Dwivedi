@@ -1,15 +1,14 @@
-@use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .hero {
     &__container {
+        @include flex($direction: column);
         width: 100%;
         text-align: center;
         padding-top: 6.4rem;
         padding-bottom: 6.4rem;
-
-        @include flex($direction: column);
-        gap: 6.4rem;
+        gap: 7rem;
 
         @include media(md) {
             padding-top: 6rem;
@@ -25,10 +24,10 @@
 
     &__body {
         @include flex($direction: column);
-        gap: 3rem;
+        gap: 3.4rem;
 
         @include media(md) {
-            gap: 6.4rem;
+            gap: 6.8rem;
         }
 
         @include media(lg) {
@@ -44,8 +43,8 @@
     &__picture {
         @include media(lg) {
             flex-shrink: 0;
-            height: 713px;
-            width: 772px;
+            height: 71.3rem;
+            width: 77.2rem;
         }
     }
 
@@ -57,8 +56,8 @@
     }
 
     &__content {
-        position: relative;
         @include flex($direction: column);
+        position: relative;
         gap: 3.4rem;
 
         @include media(md) {
@@ -88,9 +87,9 @@
     }
 
     &__badge {
+        @include flex();
         color: $color-secondary;
         padding: 1.6rem 3.2rem;
-        @include flex();
         gap: 1.6rem;
         background-color: $color-white;
         box-shadow: 0 0.4rem 1rem rgba($color-black, 0.05);
@@ -100,6 +99,7 @@
     &__title {
         color: $color-black;
         max-width: 16ch;
+
         @include media(lg) {
             line-height: 1.3;
         }
@@ -127,13 +127,13 @@
     }
 
     &__button {
-        width: 100%;
         @include flex();
+        width: 100%;
         gap: 0.8rem;
         white-space: nowrap;
     }
 
-    &__button:first-of-type {
+    &__button:hover {
         box-shadow: 0 0.4rem 1rem rgba($color-black, 0.2);
     }
 
@@ -153,7 +153,7 @@
         }
     }
 
-    &__logo {
+    &__logos-img {
         height: 2rem;
 
         @include media(md) {
@@ -162,26 +162,18 @@
     }
 }
 
-.icon-play {
-    font-size: 2rem;
-}
-
-.icon-bag {
-    font-size: 2rem;
-}
-
 .decor-pattern {
     display: none;
 
     @include media(md) {
         display: block;
         position: absolute;
-        bottom: -4.4rem;
-        left: -17.6rem;
+        bottom: -5rem;
+        left: -17.2rem;
     }
 
     @include media(lg) {
         left: -9rem;
-        bottom: -14rem;
+        bottom: -15rem;
     }
 }

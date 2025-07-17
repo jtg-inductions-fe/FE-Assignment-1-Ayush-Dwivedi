@@ -2,13 +2,12 @@
 @use '../abstracts/mixins' as *;
 
 .header {
+    @include flex();
     position: sticky;
     top: 0;
-    @include flex();
     z-index: 1000;
-
     background-color: rgba($color-white, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1rem);
     transition: box-shadow 0.3s ease;
 
     body.scrolled & {
@@ -28,11 +27,8 @@
     }
 
     &__container {
+        @include flex($justify: space-between, $direction: row-reverse);
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row-reverse; // Mobile: hamburger on right
         padding-top: 3.8rem;
         padding-bottom: 0.4rem;
 
@@ -47,6 +43,12 @@
             body.scrolled & {
                 padding: 2.4rem 13rem 0.4rem 13rem;
             }
+        }
+    }
+
+    &__menu-toggle.is-nav-open {
+        & .icon-hamburger {
+            transform: rotate(90deg);
         }
     }
 
@@ -91,7 +93,7 @@
         z-index: 999;
         text-align: center;
 
-        &.is-open {
+        &.is-nav-open {
             right: 0;
             opacity: 1;
             visibility: visible;
@@ -103,7 +105,7 @@
             right: auto;
             max-width: 50%;
             transition: left 0.3s ease;
-            &.is-open {
+            &.is-nav-open {
                 left: 0;
             }
         }
@@ -168,19 +170,7 @@
     }
 }
 
-.header__menu-toggle.is-active .icon-hamburger {
-    transform: rotate(90deg);
-}
-
-body.is-active {
+body.is-nav-open {
     overflow: hidden;
     height: 100vh;
-}
-
-// ===== ICON STYLING =====
-
-.icon-hamburger {
-    font-size: 4rem;
-    transition: transform 0.3s ease;
-    display: inline-block;
 }

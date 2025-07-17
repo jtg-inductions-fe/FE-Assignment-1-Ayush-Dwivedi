@@ -1,6 +1,6 @@
 @use '../abstracts/variables' as *;
-@use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
 
 .section__header {
     display: flex;
@@ -15,10 +15,11 @@
 
     h3 {
         @extend .heading--h3;
+        color: $color-grey;
+
         @include media(md) {
             letter-spacing: -0.06rem;
         }
-        color: $color-grey;
     }
 }
 
@@ -29,7 +30,6 @@
 
     p {
         @extend .text--primary;
-
         color: rgba($color-grey, 0.5);
     }
 }

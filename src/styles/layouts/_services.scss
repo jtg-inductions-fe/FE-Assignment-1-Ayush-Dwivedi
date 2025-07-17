@@ -1,22 +1,21 @@
-@use '../base/typography' as *;
-@use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .services {
     &__container {
-        position: relative;
         @include flex($direction: column);
+        position: relative;
         gap: 2.8rem;
 
         @include media(md) {
             gap: 6.4rem;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
         }
 
         @include media(lg) {
             flex-direction: row;
-            gap: 0rem;
+            gap: 0;
             padding-top: 0;
             padding-bottom: 0;
         }
@@ -25,7 +24,7 @@
     &__gradient {
         position: absolute;
         top: -19.6rem;
-        right: 0rem;
+        right: 0;
         width: 27.2rem;
         height: 34.8rem;
         background-color: rgba($color-accent-yellow, 0.5);
@@ -36,9 +35,8 @@
 
     &__header {
         text-align: center;
+
         @include media(lg) {
-            justify-content: flex-start;
-            align-items: flex-start;
             text-align: left;
         }
     }
@@ -73,7 +71,7 @@
 
         @include media(lg) {
             padding: 6.4rem;
-            min-height: 443px;
+            min-height: 44.3rem;
             // Hide third card on desktop to maintain 2-column layout
             &:last-child {
                 display: none;
@@ -86,7 +84,7 @@
         }
 
         &:hover {
-            box-shadow: 0 0.4rem 1rem rgba($color-black, 0.2);
+            box-shadow: 1.4rem 3.5rem 3rem rgba($color-black, 0.03);
         }
 
         &__logo {
@@ -95,13 +93,11 @@
         }
 
         h4 {
-            @extend .heading--h4;
             @include clamp-lines(2);
             color: $color-grey;
         }
 
         p {
-            @extend .text--primary--v3;
             @include clamp-lines(4);
             color: rgba($color-grey, 0.5);
         }

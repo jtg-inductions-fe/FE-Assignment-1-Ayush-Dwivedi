@@ -1,12 +1,10 @@
-@use '../abstracts/mixins' as *;
-@use '../base/typography' as *;
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .travel-point {
     &__container {
         @include flex($direction: column);
         gap: 3.8rem;
-
         width: 100%;
         max-width: $container-max-width;
         margin: 0 auto;
@@ -31,7 +29,7 @@
         }
 
         @include media(lg) {
-            width: 865px;
+            width: 86.5rem;
             padding: 0;
             flex-shrink: 0;
         }
@@ -40,7 +38,6 @@
     &__image {
         height: 100%;
         width: 100%;
-        overflow: hidden;
     }
 
     &__content {
@@ -48,13 +45,13 @@
         gap: 3rem;
 
         @include media(md) {
-            padding-left: 3.2rem;
-            padding-right: 3.2rem;
+            padding: 0 3.2rem;
             gap: 6.2rem;
         }
 
         @include media(lg) {
             padding: 0;
+            gap: 6rem;
         }
     }
 
@@ -64,6 +61,7 @@
 
         @include media(lg) {
             text-align: left;
+            gap: 3rem;
         }
     }
 
@@ -85,7 +83,7 @@
                 position: absolute;
                 top: -19.8rem;
                 right: -5.8rem;
-                width: 116px;
+                width: 11.6rem;
                 height: 100%;
                 background: url('/assets/images/star.png') no-repeat
                     center/contain;
@@ -95,20 +93,16 @@
     }
 
     &__card {
+        @include flex($direction: column);
         border: 1px solid rgba($color-grey, 0.1);
         border-radius: 3.2rem;
         padding: 3.2rem;
-        @include flex($direction: column);
         gap: 1.6rem;
 
         &-stats {
-            @extend .text--stats;
-
             color: $color-accent-orange;
         }
         &-description {
-            @extend .text--primary--v3;
-
             color: $color-grey;
             text-transform: capitalize;
         }
