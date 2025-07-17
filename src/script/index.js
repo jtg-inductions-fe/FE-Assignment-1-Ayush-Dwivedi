@@ -94,6 +94,29 @@ function setMobileTabOrder() {
     }
 }
 
+/**
+ * Handles newsletter form submission.
+ * Shows an alert with the entered email address.
+ *
+ * @param {Event} event - The submit event.
+ */
+function handleNewsletterSubmit(event) {
+    event.preventDefault();
+
+    const emailInput = document.querySelector('#newsletter-email');
+    const email = emailInput?.value.trim();
+
+    if (email) {
+        alert(`Thank you for subscribing with: ${email}`);
+        event.target.reset();
+    }
+}
+
+// Attach listener to the form
+document
+    .querySelector('#newsletter-form')
+    .addEventListener('submit', handleNewsletterSubmit);
+
 // Initial check
 setMobileTabOrder();
 
