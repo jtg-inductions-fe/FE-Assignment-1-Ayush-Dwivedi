@@ -14,18 +14,6 @@
         box-shadow: 0 0.4rem 1rem rgba($color-black, 0.05);
     }
 
-    &__gradient {
-        position: absolute;
-        top: -3.6rem;
-        left: -1.2rem;
-        width: 27.2rem;
-        height: 34.8rem;
-        background-color: rgba($color-accent-orange, 0.5);
-        pointer-events: none;
-        border-radius: 50%;
-        filter: blur(15rem);
-    }
-
     &__container {
         @include flex($justify: space-between, $direction: row-reverse);
         position: relative;
@@ -168,9 +156,4 @@
             }
         }
     }
-}
-
-body.is-nav-open {
-    overflow: hidden;
-    height: 100vh;
 }

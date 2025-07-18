@@ -9,7 +9,6 @@
     <body>
         <header class="header">
             <div class="container header__container">
-                <div class="header__gradient" aria-hidden="true"></div>
                 <!-- Hamburger (mobile/tab) -->
                 <button
                     type="button"
@@ -112,6 +111,7 @@
         <main>
             <section class="hero" aria-labelledby="hero-title">
                 <div class="container hero__container">
+                    <div class="hero__gradient" aria-hidden="true"></div>
                     <div class="hero__body">
                         <picture class="hero__picture">
                             <!-- Desktop First (min-width: 1440px) -->
@@ -740,8 +740,69 @@
                     </button>
                 </div>
             </section>
-        </main>
 
+            <section
+                class="container newsletter"
+                aria-labelledby="newsletter-title"
+            >
+                <img
+                    src="/assets/images/curve-pattern.png"
+                    class="newsletter__graphic newsletter__graphic--right"
+                    alt=""
+                    aria-hidden="true"
+                    role="presentation"
+                />
+                <div class="newsletter__container">
+                    <img
+                        src="/assets/images/triangle-star.svg"
+                        class="newsletter__graphic newsletter__graphic--left"
+                        alt=""
+                        aria-hidden="true"
+                        role="presentation"
+                    />
+                    <header class="newsletter__header">
+                        <h2
+                            id="newsletter-title"
+                            class="heading--h2 newsletter__title"
+                        >
+                            Subscribe to our newsletter
+                        </h2>
+                        <h3 class="heading--h3--v2 newsletter__subtitle">
+                            Prepare yourself & let’s explore the beauty of the
+                            world
+                        </h3>
+                    </header>
+                    <form
+                        class="newsletter__form"
+                        id="newsletter-form"
+                        action=""
+                        method="post"
+                        aria-label="Newsletter subscription form"
+                    >
+                        <div class="newsletter__input">
+                            <span
+                                class="icon-email newsletter__input-icon"
+                            ></span>
+                            <input
+                                type="email"
+                                id="newsletter-email"
+                                name="email"
+                                class="text--input newsletter__input-box"
+                                placeholder="Your Email"
+                                aria-label="Email address"
+                                required
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            class="text--anchor--v2 btn--primary newsletter__button"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
