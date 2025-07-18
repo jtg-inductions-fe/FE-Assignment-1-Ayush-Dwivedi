@@ -112,10 +112,35 @@ function handleNewsletterSubmit(event) {
     }
 }
 
-// Attach listener to the form
-document
-    .querySelector('#newsletter-form')
-    .addEventListener('submit', handleNewsletterSubmit);
+/**
+ * Initializes toggle functionality for collapsible footer groups.
+ *
+ * - Expands/collapses groups on user interaction.
+ * - Updates `aria-expanded` for accessibility.
+ * - Hides or reveals panels using the is-footer-group-open class.
+ *
+ * Assumes:
+ * - Each group has `data-footer-group`
+ * - Each toggle has `footer__group-toggle`
+ * - Each panel has `footer__group-panel`
+ */
+function initFooterToggles() {
+    const groups = document.querySelectorAll('[data-footer-group]');
+
+    groups.forEach((group) => {
+        const toggleBtn = group.querySelector('.footer__nav-group-toggle');
+        const panel = group.querySelector('.footer__nav-group-panel');
+
+        if (!toggleBtn || !panel) return;
+
+        toggleBtn.addEventListener('click', () => {
+            const isExpanded = panel.classList.contains('is-footer-group-open');
+
+            toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+            panel.classList.toggle('is-footer-group-open', !isExpanded);
+        });
+    });
+}
 
 // Initial check
 setMobileTabOrder();
@@ -123,5 +148,13 @@ setMobileTabOrder();
 // Re-check on resize
 window.addEventListener('resize', setMobileTabOrder);
 
+// Attach listener to the form
+document
+    .querySelector('#newsletter-form')
+    .addEventListener('submit', handleNewsletterSubmit);
+
 // Carousel
 initCarousel();
+
+// Footer toggle
+initFooterToggles();

@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'icomoon';
-    src: url('fonts/icomoon.eot?r7y77v');
+    src: url('fonts/icomoon.eot?l2krk1');
     src:
-        url('fonts/icomoon.eot?r7y77v#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?r7y77v') format('truetype'),
-        url('fonts/icomoon.woff?r7y77v') format('woff'),
-        url('fonts/icomoon.svg?r7y77v#icomoon') format('svg');
+        url('fonts/icomoon.eot?l2krk1#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?l2krk1') format('truetype'),
+        url('fonts/icomoon.woff?l2krk1') format('woff'),
+        url('fonts/icomoon.svg?l2krk1#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -27,6 +27,13 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-facebook:before {
+    content: '\e900';
+}
+.icon-twitter:before {
+    content: '\e901';
+    color: #f1f2f2;
+}
 .icon-star:before {
     content: '\e902';
     color: #facd49;
@@ -37,6 +44,10 @@
 }
 .icon-location:before {
     content: '\e904';
+    color: #fff;
+}
+.icon-instagram:before {
+    content: '\e905';
     color: #fff;
 }
 .icon-hamburger:before {
@@ -61,19 +72,6 @@
 .icon-arrow-right:before {
     content: '\e90b';
 }
-.icon-arrow-left:before {
-    content: '\e90c';
-    color: #fff;
-}
 .icon-arrow-circle:before {
     content: '\e90d';
-}
-.icon-instagram:before {
-    content: '\ea92';
-}
-.icon-twitter:before {
-    content: '\ea96';
-}
-.icon-linkedin:before {
-    content: '\eaca';
 }
