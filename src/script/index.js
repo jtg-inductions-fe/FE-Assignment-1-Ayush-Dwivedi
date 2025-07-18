@@ -135,10 +135,33 @@ function initFooterToggles() {
 
         toggleBtn.addEventListener('click', () => {
             const isExpanded = panel.classList.contains('is-footer-group-open');
-
+            // Toggle the rotation class on the arrow icon
+            const arrow = toggleBtn.querySelector('.footer__nav-arrow');
+            if (arrow)
+                arrow.classList.toggle(
+                    'footer__nav-arrow--rotated',
+                    !isExpanded,
+                );
             toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
             panel.classList.toggle('is-footer-group-open', !isExpanded);
         });
+    });
+}
+
+/**
+ * Updates tab focus on footer headings depending on viewport size.
+ * In desktop view, removes heading from tab flow.
+ */
+function updateFooterHeadingTabFocus() {
+    const isTab = window.matchMedia(`(min-width: ${BREAKPOINT_MD}px)`).matches;
+    const headings = document.querySelectorAll('.footer__nav-group-toggle');
+
+    headings.forEach((heading) => {
+        if (isTab) {
+            heading.setAttribute('tabindex', '-1');
+        } else {
+            heading.removeAttribute('tabindex');
+        }
     });
 }
 
@@ -158,3 +181,7 @@ initCarousel();
 
 // Footer toggle
 initFooterToggles();
+
+// Footer h3 tab focus remove in tab and desktop
+window.addEventListener('resize', updateFooterHeadingTabFocus);
+window.addEventListener('DOMContentLoaded', updateFooterHeadingTabFocus);

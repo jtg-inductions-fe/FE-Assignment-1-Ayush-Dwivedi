@@ -20,7 +20,7 @@
             align-items: flex-start;
             padding-top: 14.2rem;
             padding-bottom: 12.8rem;
-            gap: 6.4rem;
+            gap: 3.2rem;
         }
     }
 
@@ -101,6 +101,10 @@
         border: none;
         background-color: unset;
         width: 100%;
+
+        @include media(md) {
+            pointer-events: none;
+        }
     }
 
     &__nav-group-title {
@@ -112,6 +116,12 @@
     }
 
     &__nav-arrow {
+        transition: transform 0.3s ease;
+
+        &--rotated {
+            transform: rotate(180deg);
+        }
+
         @include media(md) {
             display: none;
         }
@@ -120,10 +130,10 @@
     &__nav-group-panel {
         display: none;
         color: rgba($color-grey, 0.75);
-
         &.is-footer-group-open {
             display: flex;
             flex-direction: column;
+            opacity: 1;
             gap: 3.2rem;
         }
 
