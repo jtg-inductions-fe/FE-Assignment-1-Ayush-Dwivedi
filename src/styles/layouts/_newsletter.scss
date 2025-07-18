@@ -1,5 +1,5 @@
-@use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 @use '../base/typography' as *;
 
 .newsletter {
@@ -7,11 +7,11 @@
     padding: 4.6rem;
 
     @include media(md) {
-        padding: 0 6.4rem;
+        padding: 0 $container-padding-md;
     }
 
     @include media(lg) {
-        padding: 5.8rem 12.4rem;
+        padding: 5.8rem $container-padding-lg;
     }
 
     &__container {
@@ -38,12 +38,11 @@
 
         &--left {
             @include media(md) {
-                left: -2.1rem;
+                left: -3.6rem;
                 top: -7.4rem;
             }
 
             @include media(lg) {
-                left: -3.4rem;
                 top: -4.8rem;
             }
         }
@@ -90,7 +89,7 @@
         }
     }
 
-    &__input-wrapper {
+    &__input {
         position: relative;
         color: rgba($color-grey, 0.75);
         width: 100%;
@@ -115,8 +114,6 @@
 
         @include media(md) {
             left: 3.4rem;
-            top: 50%;
-            transform: translateY(-50%);
             font-size: 2.6em;
         }
     }
