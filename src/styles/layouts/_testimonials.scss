@@ -6,9 +6,11 @@
         @include media(md) {
             position: absolute;
             top: -1.5rem;
+            left: 0;
+            overflow: hidden;
             height: 94rem;
             width: 100%;
-            background: url('/assets/images/Vector.png') no-repeat center / 135%;
+            background: url('/assets/images/Vector.png') no-repeat center / 136%;
             opacity: 0.1;
         }
 
@@ -19,15 +21,14 @@
     }
 
     &__container {
-        @include flex($direction: column);
         position: relative;
-        gap: 6.4rem;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 13.4rem;
+        gap: 1.6rem;
         text-align: center;
-        top: -2.2rem;
-        padding-bottom: 11.2rem;
 
         @include media(md) {
-            top: 0;
             padding-top: 8.6rem;
             padding-bottom: 8.6rem;
             gap: 5.4rem;
@@ -45,17 +46,19 @@
 
     &__card {
         @include flex($direction: column);
+        padding-top: 4.8rem;
+        padding-bottom: 3.4rem;
         gap: 6.4rem;
 
         @include media(md) {
             gap: 5.8rem;
+            padding: 0;
         }
     }
 
     &__pagination {
         @include flex();
         gap: 2.4rem;
-        padding-top: 3.2rem;
 
         @include media(md) {
             padding: 5.2rem;
@@ -92,7 +95,7 @@
         &--prev {
             position: absolute;
             left: 1.6rem;
-            bottom: 0;
+            bottom: 2rem;
 
             @include media(md) {
                 left: 6.4rem;
@@ -108,7 +111,7 @@
             transform: rotate(180deg);
             position: absolute;
             right: 1.6rem;
-            bottom: 0;
+            bottom: 2rem;
 
             @include media(md) {
                 right: 6.4rem;
