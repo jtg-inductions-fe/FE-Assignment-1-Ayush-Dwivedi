@@ -125,26 +125,28 @@ function handleNewsletterSubmit(event) {
  * - Each panel has `footer__group-panel`
  */
 function initFooterToggles() {
-    const groups = document.querySelectorAll('[data-footer-group]');
+    const footerNav = document.querySelector('.footer__nav');
 
-    groups.forEach((group) => {
-        const toggleBtn = group.querySelector('.footer__nav-group-toggle');
+    if (!footerNav) return;
+
+    footerNav.addEventListener('click', (e) => {
+        const toggleBtn = e.target.closest('.footer__nav-group-toggle');
+
+        if (!toggleBtn) return;
+
+        const group = toggleBtn.closest('[data-footer-group]');
         const panel = group.querySelector('.footer__nav-group-panel');
+        const arrow = toggleBtn.querySelector('.footer__nav-arrow');
 
-        if (!toggleBtn || !panel) return;
+        const isExpanded = panel.classList.contains('is-footer-group-open');
 
-        toggleBtn.addEventListener('click', () => {
-            const isExpanded = panel.classList.contains('is-footer-group-open');
-            // Toggle the rotation class on the arrow icon
-            const arrow = toggleBtn.querySelector('.footer__nav-arrow');
-            if (arrow)
-                arrow.classList.toggle(
-                    'footer__nav-arrow--rotated',
-                    !isExpanded,
-                );
-            toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
-            panel.classList.toggle('is-footer-group-open', !isExpanded);
-        });
+        toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+        panel.classList.toggle('is-footer-group-open', !isExpanded);
+        panel.hidden = isExpanded;
+
+        if (arrow) {
+            arrow.classList.toggle('footer__nav-arrow--rotated', !isExpanded);
+        }
     });
 }
 
@@ -169,7 +171,10 @@ function updateFooterHeadingTabFocus() {
 setMobileTabOrder();
 
 // Re-check on resize
-window.addEventListener('resize', setMobileTabOrder);
+window.addEventListener('resize', () => {
+    setMobileTabOrder();
+    updateFooterHeadingTabFocus();
+});
 
 // Attach listener to the form
 document
@@ -183,5 +188,4 @@ initCarousel();
 initFooterToggles();
 
 // Footer h3 tab focus remove in tab and desktop
-window.addEventListener('resize', updateFooterHeadingTabFocus);
-window.addEventListener('DOMContentLoaded', updateFooterHeadingTabFocus);
+updateFooterHeadingTabFocus();
