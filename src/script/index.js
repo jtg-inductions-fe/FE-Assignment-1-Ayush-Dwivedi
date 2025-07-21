@@ -112,16 +112,80 @@ function handleNewsletterSubmit(event) {
     }
 }
 
-// Attach listener to the form
-document
-    .querySelector('#newsletter-form')
-    .addEventListener('submit', handleNewsletterSubmit);
+/**
+ * Initializes toggle functionality for collapsible footer groups.
+ *
+ * - Expands/collapses groups on user interaction.
+ * - Updates `aria-expanded` for accessibility.
+ * - Hides or reveals panels using the is-footer-group-open class.
+ *
+ * Assumes:
+ * - Each group has `data-footer-group`
+ * - Each toggle has `footer__group-toggle`
+ * - Each panel has `footer__group-panel`
+ */
+function initFooterToggles() {
+    const footerNav = document.querySelector('.footer__nav');
+
+    if (!footerNav) return;
+
+    footerNav.addEventListener('click', (e) => {
+        const toggleBtn = e.target.closest('.footer__nav-group-toggle');
+
+        if (!toggleBtn) return;
+
+        const group = toggleBtn.closest('[data-footer-group]');
+        const panel = group.querySelector('.footer__nav-group-panel');
+        const arrow = toggleBtn.querySelector('.footer__nav-arrow');
+
+        const isExpanded = panel.classList.contains('is-footer-group-open');
+
+        toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+        panel.classList.toggle('is-footer-group-open', !isExpanded);
+        panel.hidden = isExpanded;
+
+        if (arrow) {
+            arrow.classList.toggle('footer__nav-arrow--rotated', !isExpanded);
+        }
+    });
+}
+
+/**
+ * Updates tab focus on footer headings depending on viewport size.
+ * In desktop view, removes heading from tab flow.
+ */
+function updateFooterHeadingTabFocus() {
+    const isTab = window.matchMedia(`(min-width: ${BREAKPOINT_MD}px)`).matches;
+    const headings = document.querySelectorAll('.footer__nav-group-toggle');
+
+    headings.forEach((heading) => {
+        if (isTab) {
+            heading.setAttribute('tabindex', '-1');
+        } else {
+            heading.removeAttribute('tabindex');
+        }
+    });
+}
 
 // Initial check
 setMobileTabOrder();
 
 // Re-check on resize
-window.addEventListener('resize', setMobileTabOrder);
+window.addEventListener('resize', () => {
+    setMobileTabOrder();
+    updateFooterHeadingTabFocus();
+});
+
+// Attach listener to the form
+document
+    .querySelector('#newsletter-form')
+    .addEventListener('submit', handleNewsletterSubmit);
 
 // Carousel
 initCarousel();
+
+// Footer toggle
+initFooterToggles();
+
+// Footer h3 tab focus remove in tab and desktop
+updateFooterHeadingTabFocus();

@@ -1,0 +1,147 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 9.2rem;
+        padding-top: 5.4rem;
+        padding-bottom: 5.4rem;
+
+        @include media(md) {
+            padding-top: 9.2rem;
+            padding-bottom: 9.2rem;
+            gap: 6.4rem;
+        }
+
+        @include media(lg) {
+            flex-direction: row;
+            align-items: flex-start;
+            padding-top: 14.2rem;
+            padding-bottom: 12.8rem;
+            gap: 3.2rem;
+        }
+    }
+
+    &__brand-group {
+        @include flex($direction: column, $align: flex-start);
+        gap: 3.2rem;
+
+        @include media(lg) {
+            max-width: 50%;
+        }
+    }
+
+    &__brand {
+        @include flex();
+        gap: 1.6rem;
+    }
+
+    &__brand-logo {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    &__brand-title {
+        color: $color-black;
+    }
+
+    &__brand-description {
+        color: rgba($color-grey, 0.5);
+    }
+
+    &__social {
+        @include flex();
+        gap: 3.2rem;
+
+        @include media(lg) {
+            padding-top: 3.2rem;
+        }
+    }
+
+    &__social-icon {
+        @include flex();
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.8rem;
+        color: $color-white;
+        background-color: $color-primary;
+        border-radius: 50%;
+    }
+
+    &__nav {
+        display: grid;
+        gap: 7.2rem;
+
+        @include media(md) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3.2rem;
+        }
+
+        @include media(lg) {
+            gap: 3.2rem;
+        }
+    }
+
+    &__nav-group {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    &__nav-group-toggle {
+        @include flex($justify: space-between);
+        border: none;
+        background-color: unset;
+        width: 100%;
+
+        @include media(md) {
+            pointer-events: none;
+        }
+    }
+
+    &__nav-group-title {
+        color: $color-grey;
+    }
+
+    &__nav-group-link {
+        color: rgba($color-grey, 0.75);
+    }
+
+    &__nav-arrow {
+        transition: transform 0.3s ease;
+
+        &--rotated {
+            transform: rotate(180deg);
+        }
+
+        @include media(md) {
+            display: none;
+        }
+    }
+
+    &__nav-group-panel {
+        display: none;
+        color: rgba($color-grey, 0.75);
+        &.is-footer-group-open {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            gap: 3.2rem;
+        }
+
+        @include media(md) {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+        }
+    }
+
+    &__nav-address {
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

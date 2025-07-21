@@ -4,11 +4,11 @@
 .travel-point {
     &__container {
         @include flex($direction: column);
-        gap: 3.8rem;
+        gap: 3.6rem;
         width: 100%;
         max-width: $container-max-width;
         margin: 0 auto;
-        padding: 6.4rem $container-padding-sm;
+        padding: 3.8rem $container-padding-sm;
 
         @include media(md) {
             padding: 8.6rem $container-padding-md;

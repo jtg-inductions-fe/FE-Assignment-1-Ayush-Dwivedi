@@ -4,6 +4,8 @@
 .services {
     &__container {
         @include flex($direction: column);
+        padding-top: 2.6rem;
+        padding-bottom: 2.6rem;
         position: relative;
         gap: 2.8rem;
 
