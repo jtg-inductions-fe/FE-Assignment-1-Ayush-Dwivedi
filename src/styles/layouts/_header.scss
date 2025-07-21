@@ -66,12 +66,12 @@
 
     &__nav {
         position: fixed;
-        top: 8.5rem;
+        top: 10.5rem;
         left: auto;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        height: calc(100vh - 8.5rem);
+        height: calc(100vh - 10.5rem);
         width: 100%;
         max-width: 1024px;
         border: 1px solid $color-light;
