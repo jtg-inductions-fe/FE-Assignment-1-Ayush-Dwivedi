@@ -10,8 +10,54 @@ const toggleBtn = document.querySelector('.header__menu-toggle');
 const navWrapper = document.querySelector('.header__nav'); // <nav>
 const navList = document.getElementById('primary-navigation'); // <ul>
 const desktopMediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT_LG}px)`);
+const logo = document.querySelector('.header__logo');
+const focusableSelectors = 'a[href]:not([tabindex="-1"]):not([hidden])';
 
 let isScrolled = false;
+let firstFocusable = null;
+let lastFocusable = null;
+
+/**
+ * Trap keyboard focus inside the mobile nav while it's open.
+ */
+function trapFocus(e) {
+    if (e.key === 'Escape') {
+        closeSidebar();
+        toggleBtn.focus(); // Return focus to hamburger
+        return;
+    }
+    if (e.key !== 'Tab') return;
+
+    const focusableElements = Array.from(
+        navList.querySelectorAll(focusableSelectors),
+    ).filter((el) => el.offsetParent !== null);
+    if (focusableElements.length === 0) return;
+    firstFocusable = focusableElements[0];
+    lastFocusable = focusableElements[focusableElements.length - 1];
+
+    // Shift + Tab: backwards
+    if (e.shiftKey && document.activeElement === firstFocusable) {
+        e.preventDefault();
+        lastFocusable.focus();
+    }
+
+    // Tab forward at end
+    if (!e.shiftKey && document.activeElement === lastFocusable) {
+        e.preventDefault();
+        firstFocusable.focus();
+    }
+}
+
+/**
+ * Enable or disable focus trap based on nav state.
+ */
+function handleFocusTrap(enable) {
+    if (enable) {
+        document.addEventListener('keydown', trapFocus);
+    } else {
+        document.removeEventListener('keydown', trapFocus);
+    }
+}
 
 /**
  * Close the mobile/tablet sidebar navigation.
@@ -23,6 +69,7 @@ function closeSidebar() {
     navWrapper.classList.remove('is-nav-open');
     toggleBtn.classList.remove('is-nav-open');
     document.body.classList.remove('is-nav-open');
+    handleFocusTrap(false);
 }
 
 /**
@@ -43,6 +90,16 @@ toggleBtn.addEventListener('click', () => {
     // ✅ Toggle rotation class on hamburger icon
     toggleBtn.classList.toggle('is-nav-open');
     document.body.classList.toggle('is-nav-open', !expanded);
+
+    const width = window.innerWidth;
+    if (!expanded && width >= BREAKPOINT_MD && width < BREAKPOINT_LG) {
+        // Temporarily skip logo from focus
+        logo.setAttribute('tabindex', '-1');
+    } else {
+        // Restore normal tabbing to logo
+        logo.removeAttribute('tabindex');
+    }
+    handleFocusTrap(!expanded);
 });
 
 /**
