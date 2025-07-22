@@ -1,0 +1,159 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Headings
+.heading {
+    font-family: $font-circular;
+    font-weight: $font-bold;
+    line-height: 1.2;
+
+    &--h1 {
+        font-size: 4rem;
+
+        @include media(md) {
+            font-size: 5.6rem;
+        }
+
+        @include media(lg) {
+            font-size: 6.6rem;
+        }
+    }
+
+    &--h2 {
+        font-size: 1.6rem;
+        letter-spacing: 0.2em;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &--h2--v2 {
+        font-size: 2.4rem;
+        line-height: 4rem;
+    }
+
+    &--h3 {
+        font-size: 3.2rem;
+
+        @include media(md) {
+            font-size: 4rem;
+        }
+
+        @include media(lg) {
+            font-size: 4.4rem;
+        }
+    }
+
+    &--h3--v2 {
+        font-size: 3.2rem;
+
+        @include media(md) {
+            font-size: 4rem;
+        }
+
+        @include media(lg) {
+            font-size: 5.5rem;
+        }
+    }
+
+    &--h3--v3 {
+        font-size: 2.3rem;
+    }
+
+    &--h4 {
+        font-size: 2.4rem;
+
+        @include media(md) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &--h4--v2 {
+        font-size: 2.3rem;
+    }
+
+    &--h4--v3 {
+        font-size: 2.8rem;
+    }
+}
+
+.text {
+    &--anchor {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    &--anchor--v2 {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        font-size: 1.6rem;
+        line-height: 1.2;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &--anchor--v3 {
+        font-family: $font-inter;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+
+    &--primary {
+        font-family: $font-inter;
+        font-size: 1.6rem;
+        line-height: 1.6;
+
+        @include media(md) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &--primary--v2 {
+        font-family: $font-circular;
+        font-size: 1.6rem;
+        line-height: 1.6;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &--primary--v3 {
+        font-family: $font-inter;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+
+    &--primary--v4 {
+        font-family: $font-circular;
+        font-size: 1.8rem;
+        line-height: 1.6;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &--stats {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        font-size: 3.5rem;
+        line-height: 1.2;
+    }
+
+    &--input {
+        font-family: $font-circular;
+        font-weight: $font-bold;
+        line-height: 1.2;
+        font-size: 1.4rem;
+
+        @include media(md) {
+            font-size: 2.3rem;
+        }
+    }
+}

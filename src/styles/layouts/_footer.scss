@@ -1,0 +1,159 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 9.2rem;
+        padding-top: 5.4rem;
+        padding-bottom: 5.4rem;
+
+        @include media(md) {
+            padding-top: 9.2rem;
+            padding-bottom: 9.2rem;
+            gap: 6.4rem;
+        }
+
+        @include media(lg) {
+            flex-direction: row;
+            align-items: flex-start;
+            padding-top: 14.2rem;
+            padding-bottom: 12.8rem;
+            gap: 3.2rem;
+        }
+    }
+
+    &__brand-group {
+        @include flex($direction: column, $align: flex-start);
+        gap: 3.2rem;
+
+        @include media(lg) {
+            max-width: 50%;
+        }
+    }
+
+    &__brand {
+        @include flex();
+        gap: 1.6rem;
+    }
+
+    &__brand-logo {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    &__brand-title {
+        color: $color-black;
+    }
+
+    &__brand-description {
+        color: rgba($color-grey, 0.5);
+    }
+
+    &__social {
+        @include flex();
+        gap: 3.2rem;
+
+        @include media(lg) {
+            padding-top: 3.2rem;
+        }
+    }
+
+    &__social-icon {
+        @include flex();
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.8rem;
+        color: $color-white;
+        background-color: $color-primary;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: darken($color-primary, 10%);
+            box-shadow: 0 0.1rem 1rem $color-grey;
+        }
+    }
+
+    &__nav {
+        display: grid;
+        gap: 2.8rem;
+
+        @include media(md) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3.2rem;
+        }
+
+        @include media(lg) {
+            gap: 3.2rem;
+        }
+    }
+
+    &__nav-group {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    &__nav-group-toggle {
+        @include flex($justify: space-between);
+        border: none;
+        background-color: unset;
+        width: 100%;
+
+        @include media(md) {
+            pointer-events: none;
+        }
+    }
+
+    &__nav-group-title {
+        color: $color-grey;
+    }
+
+    &__nav-link {
+        color: rgba($color-grey, 0.75);
+
+        &:hover {
+            color: $color-dark;
+            text-decoration: underline;
+        }
+    }
+
+    &__nav-arrow {
+        transition: transform 0.3s ease;
+
+        &--rotated {
+            transform: rotate(180deg);
+        }
+
+        @include media(md) {
+            display: none;
+        }
+    }
+
+    &__nav-group-panel {
+        max-height: 0;
+        overflow: hidden;
+        color: rgba($color-grey, 0.75);
+        padding: 0.6rem;
+        transition: max-height 0.4s ease-out;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+
+        @include media(md) {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+            padding: 0;
+            max-height: fit-content;
+        }
+    }
+
+    &__nav-address {
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

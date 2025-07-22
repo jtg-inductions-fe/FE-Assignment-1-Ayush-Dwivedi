@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.section__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    h2 {
+        @extend .heading--h2;
+        color: $color-secondary;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        @extend .heading--h3;
+        color: $color-grey;
+
+        @include media(md) {
+            letter-spacing: -0.06rem;
+        }
+    }
+}
+
+.section__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    p {
+        @extend .text--primary;
+        color: rgba($color-grey, 0.5);
+    }
+}

@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as *;
+
+/* Circular Std */
+@include font-face('Circular Std', 'CircularStd-Regular', 400);
+@include font-face('Circular Std', 'CircularStd-Bold', 700);
+
+/* Inter */
+@include font-face('Inter', 'Inter-Regular', 400);
+@include font-face('Inter', 'Inter-Bold', 700);
