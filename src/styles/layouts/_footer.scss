@@ -68,11 +68,16 @@
         color: $color-white;
         background-color: $color-primary;
         border-radius: 50%;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: darken($color-primary, 10%);
+            box-shadow: 0 0.1rem 1rem $color-grey;
+        }
     }
 
     &__nav {
         display: grid;
-        gap: 7.2rem;
+        gap: 2.8rem;
 
         @include media(md) {
             grid-template-columns: repeat(3, 1fr);
@@ -105,8 +110,13 @@
         color: $color-grey;
     }
 
-    &__nav-group-link {
+    &__nav-link {
         color: rgba($color-grey, 0.75);
+
+        &:hover {
+            color: $color-dark;
+            text-decoration: underline;
+        }
     }
 
     &__nav-arrow {
@@ -122,19 +132,21 @@
     }
 
     &__nav-group-panel {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
         color: rgba($color-grey, 0.75);
-        &.is-footer-group-open {
-            display: flex;
-            flex-direction: column;
-            opacity: 1;
-            gap: 3.2rem;
-        }
+        padding: 0.6rem;
+        transition: max-height 0.4s ease-out;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
 
         @include media(md) {
             display: flex;
             flex-direction: column;
             gap: 3.2rem;
+            padding: 0;
+            max-height: fit-content;
         }
     }
 

@@ -5,10 +5,13 @@ const BREAKPOINT_MD = 1024;
 const BREAKPOINT_LG = 1440;
 const SCROLL_THRESHOLD_DOWN = 100;
 const SCROLL_THRESHOLD_UP = 50;
+const HEADER_OFFSET = 180;
 
 const toggleBtn = document.querySelector('.header__menu-toggle');
 const navWrapper = document.querySelector('.header__nav'); // <nav>
 const navList = document.getElementById('primary-navigation'); // <ul>
+const navLinks = navList.querySelectorAll('.header__nav-link');
+const sections = document.querySelectorAll('section[id]');
 const desktopMediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT_LG}px)`);
 const logo = document.querySelector('.header__logo');
 const focusableSelectors = 'a[href]:not([tabindex="-1"]):not([hidden])';
@@ -16,6 +19,64 @@ const focusableSelectors = 'a[href]:not([tabindex="-1"]):not([hidden])';
 let isScrolled = false;
 let firstFocusable = null;
 let lastFocusable = null;
+
+/**
+ * Handles click events on primary navigation using event delegation.
+ * - Applies the active class to the clicked nav link.
+ * - Prevents default anchor behavior.
+ * - Scrolls to the target section with an offset for the fixed header.
+ *
+ * @param {MouseEvent} e - The click event on the navigation.
+ */
+navList.addEventListener('click', (e) => {
+    // Check if the clicked element is a nav link
+    const link = e.target.closest('.header__nav-link');
+
+    if (!link) return; // ignore clicks outside nav links
+    if (!link.getAttribute('href')?.startsWith('#')) return; // ignore external links
+
+    e.preventDefault();
+
+    // Remove active class from all nav links
+    navList
+        .querySelectorAll('.header__nav-link')
+        .forEach((el) => el.classList.remove('header__nav-link--active'));
+
+    // Add active class to the clicked link
+    link.classList.add('header__nav-link--active');
+
+    // Scroll to the target section
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+
+    if (target) {
+        window.scrollTo({
+            top: target.offsetTop - HEADER_OFFSET,
+        });
+    }
+});
+
+/**
+ * Updates active nav link based on scroll position.
+ */
+function updateActiveNavOnScroll() {
+    const y = window.scrollY;
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - HEADER_OFFSET;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (y >= sectionTop && y < sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+                link.classList.toggle(
+                    'header__nav-link--active',
+                    link.getAttribute('href') === `#${sectionId}`,
+                );
+            });
+        }
+    });
+}
 
 /**
  * Trap keyboard focus inside the mobile nav while it's open.
@@ -130,6 +191,8 @@ window.addEventListener('scroll', () => {
         document.body.classList.remove('scrolled');
         isScrolled = false;
     }
+
+    updateActiveNavOnScroll();
 });
 
 /**
@@ -203,6 +266,12 @@ function initFooterToggles() {
 
         if (arrow) {
             arrow.classList.toggle('footer__nav-arrow--rotated', !isExpanded);
+        }
+
+        if (isExpanded) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = `${panel.scrollHeight}px`;
         }
     });
 }

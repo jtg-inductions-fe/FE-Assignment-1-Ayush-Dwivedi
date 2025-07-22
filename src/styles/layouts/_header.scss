@@ -139,6 +139,10 @@
             color: $color-dark;
             text-decoration: underline;
         }
+
+        &--active {
+            color: $color-dark;
+        }
     }
 
     &__auth {
