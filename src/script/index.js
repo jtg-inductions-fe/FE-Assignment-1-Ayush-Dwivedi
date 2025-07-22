@@ -204,6 +204,12 @@ function initFooterToggles() {
         if (arrow) {
             arrow.classList.toggle('footer__nav-arrow--rotated', !isExpanded);
         }
+
+        if (isExpanded) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
     });
 }
 
